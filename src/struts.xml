@@ -16,6 +16,23 @@
 			<result name="loginPage">/login.jsp</result>
 			<allowed-methods>loginPage</allowed-methods>
 		</action>
+		
+		<action name="adminAction_*" class="adminAction" method="{1}">
+			<result name="loginPage">/admin/login.jsp</result>
+			<result name="index">/admin/index.jsp</result>
+			<result name="header">/admin/header.jsp</result>
+			<result name="menu">/admin/menu.jsp</result>
+			<result name="welcome">/admin/welcome.jsp</result>
+			<result name="footer">/admin/footer.jsp</result>
+			<allowed-methods>loginPage,login,index,header,menu,welcome,footer</allowed-methods>
+		</action>
+		
+		<action name="goodsAction_*" class="goodsAction" method="{1}">
+			<result name="searchGoods">/admin/goods.jsp</result>
+			<result name="addPage">/admin/addgoods.jsp</result>
+			<result name="toSearchGoods" type="redirectAction">goodsAction_searchGoods</result>
+			<allowed-methods>searchGoods,addPage,add</allowed-methods>
+		</action>
 	</package>
 
 </struts>
