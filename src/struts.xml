@@ -14,7 +14,11 @@
 	<package name="front" namespace="/" extends="struts-default">
 		<action name="userAction_*" class="userAction" method="{1}">
 			<result name="loginPage">/login.jsp</result>
-			<allowed-methods>loginPage</allowed-methods>
+			<result name="zhucePage">/zhuce.jsp</result>
+			<result name="zhuce">/user.jsp</result>
+			<result name="user">/user.jsp</result>
+			<allowed-methods>zhuce,zhuceRand,loginRand,loginUser,ajax,loginPage,zhucePage,user</allowed-methods>
+			
 		</action>
 		
 		<action name="adminAction_*" class="adminAction" method="{1}">

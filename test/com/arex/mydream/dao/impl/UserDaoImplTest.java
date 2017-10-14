@@ -9,9 +9,9 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.arex.mydream.dao.UserDao;
-import com.arex.mydream.dao.impl.UserDaoImpl;
-import com.arex.mydream.entity.User;
+import com.arex.mydream.dao.UserDAO;
+import com.arex.mydream.dao.impl.UserDAOImpl;
+import com.arex.mydream.model.User;
 
 
 @RunWith(SpringJUnit4ClassRunner.class)
