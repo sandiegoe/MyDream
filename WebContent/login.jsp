@@ -101,7 +101,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         </nav>
     </div>
 </section>
-<form action="UserServlet?todo=loginRand" method="post" name="form1">
+<form action="userAction_loginRand" method="post" name="form1">
   <div class="w-1000 w-750 pt-50">
     <p class="member">会员登录</p>
     <div class="login-sec clearfix">
@@ -143,7 +143,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                     <div class="yanzm pull-left">
                       <input type="text" placeholder="请输入验证码" class="pull-left form-control" id="verify" name="rand" >  
                     </div>
-                    <div><img src="rand" height="30"  width="80"/></div>
+                    <div><img src="rand.jsp" height="30"  width="80"/></div>
                 </li>
 
               <li class="clearfix log-wj">
