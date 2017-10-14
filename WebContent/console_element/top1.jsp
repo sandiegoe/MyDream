@@ -237,7 +237,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                     <a href="userAction_loginPage" class="link-gray">[ 登录 ]</a> 
                                    
                     ，
-                    <a href="zhuce.jsp" class="link-gray">[ 注册有惊喜 ]</a>
+                    <a href="userAction_zhucePage" class="link-gray">[ 注册有惊喜 ]</a>
                 </li>
                                 <li>|</li>
 
