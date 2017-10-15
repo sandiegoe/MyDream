@@ -21,6 +21,8 @@ public class UserServiceImpl implements UserService{
 	@Transactional(readOnly = false, propagation = Propagation.REQUIRES_NEW )
 	public void addUser(UserInfo userInfo) {
 		User user = this.cenvertVO2PO(userInfo);
+		String SAUpwd = SHA1jiami.SHA1Digest(user.getuPwd());// 让密码加密
+		user.setuPwd(SAUpwd); // 将加密串放在User中
 		userDAO.add(user);
 	}
 	
