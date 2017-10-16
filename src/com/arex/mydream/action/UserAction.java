@@ -57,8 +57,7 @@ public class UserAction extends ActionSupport implements ModelDriven,ServletResp
 			return "zhucePage";
 		} else {
 			if (userInfo.getuPwd().equals(userInfo.getuPwd1())) {// 2次输入密码一致
-				this.zhuceRand();
-				return "zhuce";
+				return this.zhuceRand();
 			} else {
 				request.getSession().setAttribute("errMs", "对不起您输入的不正确");
 				return "zhucePage";
@@ -74,6 +73,7 @@ public class UserAction extends ActionSupport implements ModelDriven,ServletResp
 			return "zhucePage";
 		} else {
 			if (userInfo.getRand().equals(sRand)) {
+				userInfo.setuFlag("1");
 				
 				//加密用户密码
 				//String SAUpwd = SHA1jiami.SHA1Digest(uPwd);// 加密用户输入的密码
@@ -104,8 +104,7 @@ public class UserAction extends ActionSupport implements ModelDriven,ServletResp
 			return "loginPage";
 		} else {
 			if (userInfo.getRand().equals(sRand)) {
-				this.loginUser();
-				return "user";
+				return this.loginUser();
 			} else {
 				request.setAttribute("errMs", "请输入正确的验证码！");
 				return "loginPage";
@@ -121,7 +120,11 @@ public class UserAction extends ActionSupport implements ModelDriven,ServletResp
 			request.getSession().setAttribute("errMs", "您输入的用户名和密码有误！");
 			return "loginPage";
 		} else {
+			
+			//System.out.println(userInfo.getuPhone());
+			//System.out.println(userInfo.getuPwd());
 			User user = userService.loginUser(userInfo.getuPhone(), userInfo.getuPwd());
+			//System.out.println(user.toString());
 			if (user != null) {
 				request.getSession().setAttribute("user", user);
 				return "user";
@@ -146,7 +149,22 @@ public class UserAction extends ActionSupport implements ModelDriven,ServletResp
 		out.close();
 		return null;
 	}
+	
+	public String loginOut(){
+		request.getSession().removeAttribute("user");
+		request.getSession().removeAttribute("gwc");
+		return "loginPage";
+	}
 
+	public String searchjibenziliao(){
+		User user = (User) request.getSession().getAttribute("user");
+		String uPhone = user.getuPhone();
+		User us = userService.searchUser(uPhone);
+		// request.setAttribute("us", us);
+		request.getSession().setAttribute("user", us);
+		return "jibenziliao";
+	}
+	
 	@Override
 	public Object getModel() {
 		return userInfo;

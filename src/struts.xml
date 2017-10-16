@@ -16,9 +16,10 @@
 			<result name="loginPage">/login.jsp</result>
 			<result name="zhucePage">/zhuce.jsp</result>
 			<result name="zhuce">/user.jsp</result>
+			<result name="jibenziliao">/jibenziliao.jsp</result>
 			<result name="user" type="redirect">/user.jsp</result>
 			<result name="indexPage">/index.jsp</result>
-			<allowed-methods>zhuce,zhuceRand,loginRand,loginUser,ajax,loginPage,zhucePage,user,indexPage,userPage</allowed-methods>
+			<allowed-methods>zhuce,zhuceRand,loginRand,loginUser,ajax,loginPage,zhucePage,user,indexPage,userPage,loginOut,searchjibenziliao</allowed-methods>
 		</action>
 		
 		<action name="adminAction_*" class="adminAction" method="{1}">

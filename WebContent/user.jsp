@@ -85,7 +85,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		
 	</li>
 	<li>
-		<a href="UserServlet?todo=searchjibenziliao" >基本资料</a>
+		<a href="userAction_searchjibenziliao" >基本资料</a>
 		<a href="mimaxiugai.jsp" >密码修改</a>
 		<a href="shouhuodizhi.jsp" >收货地址</a>
 		<a href="tongzhishezhi.jsp" >通知设置</a>
