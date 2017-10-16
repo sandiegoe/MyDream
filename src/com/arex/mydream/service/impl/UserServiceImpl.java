@@ -7,15 +7,16 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.arex.mydream.action.vo.UserInfo;
-import com.arex.mydream.dao.UserDAO;
+import com.arex.mydream.dao.UserDao;
 import com.arex.mydream.model.User;
 import com.arex.mydream.service.UserService;
 import com.arex.mydream.util.SHA1jiami;
 
 @Component("userService")
+@Transactional
 public class UserServiceImpl implements UserService{
 
-	private UserDAO userDAO;
+	private UserDao userDAO;
 	
 	@Override
 	@Transactional(readOnly = false, propagation = Propagation.REQUIRES_NEW )
@@ -62,12 +63,12 @@ public class UserServiceImpl implements UserService{
 
 	}
 
-	public UserDAO getUserDAO() {
+	public UserDao getUserDAO() {
 		return userDAO;
 	}
 
 	@Resource
-	public void setUserDAO(UserDAO userDAO) {
+	public void setUserDAO(UserDao userDAO) {
 	
 		this.userDAO = userDAO;
 	}
@@ -88,6 +89,12 @@ public class UserServiceImpl implements UserService{
 			user.setuPwd(userInfo.getuPwd());
 		}
 		return user;
+	}
+
+	@Override
+	public void updateUser(UserInfo userInfo) {
+		User user = this.cenvertVO2PO(userInfo);
+		userDAO.update(user);
 	}
 
 
