@@ -64,6 +64,7 @@ public class UserAction extends ActionSupport implements ModelDriven,ServletResp
 			return "zhucePage";
 		} else {
 			if (userInfo.getRand().equals(sRand)) {
+				userInfo.setuFlag("1");
 				userService.addUser(userInfo);
 
 				User user1 = userService.searchUser(userInfo.getuPhone());
@@ -135,7 +136,22 @@ public class UserAction extends ActionSupport implements ModelDriven,ServletResp
 		out.close();
 		return null;
 	}
+	
+	public String loginOut(){
+		request.getSession().removeAttribute("user");
+		request.getSession().removeAttribute("gwc");
+		return "loginPage";
+	}
 
+	public String searchjibenziliao(){
+		User user = (User) request.getSession().getAttribute("user");
+		String uPhone = user.getuPhone();
+		User us = userService.searchUser(uPhone);
+		// request.setAttribute("us", us);
+		request.getSession().setAttribute("user", us);
+		return "jibenziliao";
+	}
+	
 	@Override
 	public Object getModel() {
 		return userInfo;

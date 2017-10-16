@@ -17,7 +17,8 @@
 			<result name="zhucePage">/zhuce.jsp</result>
 			<result name="zhuce">/user.jsp</result>
 			<result name="user">/user.jsp</result>
-			<allowed-methods>zhuce,zhuceRand,loginRand,loginUser,ajax,loginPage,zhucePage,user</allowed-methods>
+			<result name="jibenziliao">/jibenziliao.jsp</result>
+			<allowed-methods>zhuce,loginRand,ajax,loginPage,zhucePage,user,loginOut,searchjibenziliao</allowed-methods>
 			
 		</action>
 		

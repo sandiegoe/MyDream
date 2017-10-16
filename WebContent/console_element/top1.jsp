@@ -231,7 +231,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                 <li>
                                
                                     <a href="user.jsp" class="link-gray"></a>
-                                    <a href="UserServlet?todo=loginOut" class="link-gray">[ 退出 ]</a> 
+                                    <a href="userAction_loginOut" class="link-gray">[ 退出 ]</a> 
                                     
                                    
                                     <a href="userAction_loginPage" class="link-gray">[ 登录 ]</a> 

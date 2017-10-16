@@ -66,7 +66,7 @@ public class UserServiceImpl implements UserService{
 		return userDAO;
 	}
 
-	@Resource
+	@Resource(name="userDAO")
 	public void setUserDAO(UserDAO userDAO) {
 	
 		this.userDAO = userDAO;
