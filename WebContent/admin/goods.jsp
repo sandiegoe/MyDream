@@ -25,13 +25,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <div class="right_content">            
         <h2>果品列表</h2>
 		<div class="top-input">
-			<form action="GoodsServlet?todo=searchnameGoods" name="search" method="post">
+			<form action="goodsAction_searchnameGoods" name="search" method="post">
             	<table id="top-table">
                     <tbody>
                         <tr>
                             <td>
 								<span><span class="rounded">果</span>品名称</span>
-								<select name="gname" size="1" class="" id="">
+								<select name="gName" size="1" class="" id="">
 								<c:forEach var="good" items="${listGood}">
 								  <option>${good.gName} </option>				
 								 	</c:forEach>		
@@ -77,8 +77,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                     <td>${goods.gType}</td>
                     <td>${goods.gAddress}</td>
                                         <td>${goods.gDescribe}</td>
-                    <td><a href="GoodsServlet?todo=searchupdateGoods&gid=${goods.gId}"><img src="admin/images/user_edit.png" alt="" title="" border="0" /></a></td>
-                    <td><a href="GoodsServlet?todo=deleteGoods&gid=${goods.gId}" class="ask"><img src="admin/images/trash.png" alt="" title="" border="0" /></a></td>
+                    <td><a href="goodsAction_searchupdateGoods?gId=${goods.gId}"><img src="admin/images/user_edit.png" alt="" title="" border="0" /></a></td>
+                    <td><a href="goodsAction_deleteGoods?gId=${goods.gId}" class="ask"><img src="admin/images/trash.png" alt="" title="" border="0" /></a></td>
                 </tr>
                 <!--end 单条记录 -->      
                </c:forEach>
@@ -94,7 +94,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<div class="btns-pagenav">
 			<!-- 按钮 -->
             <div class="div-btns">
-            <div class="div-btns"><a href="GoodsServlet?todo=searchAllGoods2" class="bt_green">显示全部<span class="rounded">果品</span></a>
+            <div class="div-btns"><a href="goodsAction_searchAllGoods2" class="bt_green">显示全部<span class="rounded">果品</span></a>
                 <a href="goodsAction_addPage" class="bt_green">添 加 <span class="rounded">果</span> 品</a>
                 
             </div> 
@@ -113,12 +113,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 </div>
                 --%> 
 				<div class="page-navigator-right">
-							<a href="GoodsServlet?todo=searchGoods&pageNo=1" class="first">«</a>
-							<a href="GoodsServlet?todo=searchGoods&pageNo=${page.pageNo-1}"
+							<a href="goodsAction_searchGoods?pageNo=1" class="first">«</a>
+							<a href="goodsAction_searchGoods?pageNo=${page.pageNo-1}"
 								class="prev">‹</a> &nbsp;第 ${page.pageNo} 页&nbsp; &nbsp;共<td>${page.pageCount}</td>页&nbsp;
-							<a href="GoodsServlet?todo=searchGoods&pageNo=${page.pageNo+1}"
+							<a href="goodsAction_searchGoods?pageNo=${page.pageNo+1}"
 								class="next">›</a>
-							<a href="GoodsServlet?todo=searchGoods&pageNo=${page.pageCount}"
+							<a href="goodsAction_searchGoods?pageNo=${page.pageCount}"
 								class="last">»</a>
 						</div>
 			</div>

@@ -1,4 +1,4 @@
-package com.arex.mydream.biz.impl;
+package com.arex.mydream.service.impl;
 
 import java.util.ArrayList;
 
@@ -16,10 +16,10 @@ import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Component;
 
-import com.arex.mydream.biz.GoodsBiz;
+import com.arex.mydream.action.vo.GoodsDTO;
 import com.arex.mydream.dao.GoodsDao;
-import com.arex.mydream.entity.Goods;
-import com.arex.mydream.entity.view.GoodsDTO;
+import com.arex.mydream.model.Goods;
+import com.arex.mydream.service.GoodsBiz;
 
 
 @Component
@@ -46,7 +46,7 @@ public class GoodsBizImpl implements GoodsBiz {
 			goods = new Goods();
 			goods.setgAddress(goodsDTO.getgAddress());
 			goods.setgDescribe(goodsDTO.getgDescribe());
-//			goods.setgId(gId);
+			goods.setgId(goodsDTO.getgId());  //做更新的时候使用
 			goods.setgName(goodsDTO.getgName());
 			goods.setgPic(goodsDTO.getgPic());
 			goods.setgPrice(goodsDTO.getgPrice());
@@ -164,10 +164,10 @@ public class GoodsBizImpl implements GoodsBiz {
 	 * 根据名字查询商品
 	 */
 	@Override
-	public GoodsDTO searchByGname(String gName) {
-		Goods goods = dao.searchByGname(gName);
-		GoodsDTO goodsDTO = this.convertPO2VO(goods);
-		return goodsDTO;
+	public List<GoodsDTO> searchByGname(String gName) {
+		List<Goods> listGS = dao.searchByGname(gName);
+		List<GoodsDTO> listGO = this.convertPO2VOList(listGS);
+		return listGO;
 	}
 
 	/**
@@ -213,6 +213,26 @@ public class GoodsBizImpl implements GoodsBiz {
 		List<Goods> goodsList = dao.searchByCondition(hqlWhere, params.toArray(), null);
 		List<GoodsDTO> goodsDTOList = this.convertPO2VOList(goodsList);
 		return goodsDTOList;
+	}
+
+	@Override
+	public List<GoodsDTO> searchGoodBysId(int sId, int pageNo, int pageSize) {
+		List<Goods> listGS = dao.searchGoodsBySid(sId, pageNo, pageSize);
+		List<GoodsDTO> listGO = this.convertPO2VOList(listGS);
+		return listGO;
+	}
+
+	@Override
+	public List<GoodsDTO> searchGoodBysId(int sId) {
+		List<Goods> listGS = dao.searchGoodsBySid(sId);
+		List<GoodsDTO> listGO = this.convertPO2VOList(listGS);
+		return listGO;
+	}
+
+	@Override
+	public int searchGoodsCountBySid(int sId) {
+		int count = dao.searchGoodsCountBySid(sId);
+		return count;
 	}
 
 }

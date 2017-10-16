@@ -3,7 +3,7 @@ package com.arex.mydream.dao;
 import java.util.LinkedHashMap;
 import java.util.List;
 
-import com.arex.mydream.entity.Goods;
+import com.arex.mydream.model.Goods;
 
 /**
  * 商品的接口
@@ -69,10 +69,16 @@ public interface GoodsDao {
 	 * @param gName
 	 * @return
 	 */
-	public Goods searchByGname(String gName);
+	public List<Goods> searchByGname(String gName);
 
 	/**
 	 * 魏陈霞 拼接条件查询
 	 */
 	List<Goods> searchByCondition(String hqlWhere, Object[] objects, LinkedHashMap<String, String> orderby);
+
+	public List<Goods> searchGoodsBySid(int sId, int pageNo, int pageSize);
+
+	public List<Goods> searchGoodsBySid(int sId);
+
+	public int searchGoodsCountBySid(int sId);
 }

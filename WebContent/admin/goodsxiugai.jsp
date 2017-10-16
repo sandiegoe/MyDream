@@ -17,9 +17,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	</head>
 
 	<body>
-		<form id="goodsAdd" class="goodsAdd" action="GoodsServlet?todo=updateGoods" method="post">
+		<form id="goodsAdd" class="goodsAdd" action="goodsAction_updateGoods" method="post">
 			<div class="right_content" align="center">
-			<input type="hidden" name="gid" value="${goods.gId}"/>
+			<input type="hidden" name="gId" value="${goods.gId}"/>
 				<h2>修改果品信息</h2>
 				<table id="input-table" style="width: 40%;">
 					<tbody>
@@ -28,7 +28,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								<span class="">果品名称</span>
 							</td>
 							<td>
-								<input name="gname" id="" class="info-textfield" type="text" value="${goods.gName}"/>
+								<input name="gName" id="" class="info-textfield" type="text" value="${goods.gName}"/>
 							</td>
 							<!--<td><span class="">用户名不可更改。</span></td>-->
 						</tr>
@@ -37,7 +37,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								<span class="">销售价格</span>
 							</td>
 							<td>
-								<input name="gprice" id="" class="info-textfield" type="text" value="${goods.gPrice}"/>
+								<input name="gPrice" id="" class="info-textfield" type="text" value="${goods.gPrice}"/>
 							</td>
 							<!--<td><span class="">用户名不可更改。</span></td>-->
 						</tr>
@@ -46,7 +46,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								<span class="">类型</span>
 							</td>
 							<td>
-								<input name="gtype" id="" class="info-textfield" type="text" value="${goods.gType}"/>
+								<input name="gType" id="" class="info-textfield" type="text" value="${goods.gType}"/>
 							</td>
 							<!--<td><span class="">用户名不可更改。</span></td>-->
 						</tr>
@@ -55,14 +55,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								<span class="">产地</span>
 							</td>
 							<td>
-								<input name="gaddress" id="" class="info-textfield" type="text" value="${goods.gAddress}"/>
+								<input name="gAddress" id="" class="info-textfield" type="text" value="${goods.gAddress}"/>
 							</td>
 							<!--<td><span class="">用户名不可更改。</span></td>-->
 						</tr>
 						<tr>
 							
 						
-								<input name="gpic" id="" class="info-textfield" type="hidden" value="${goods.gPic}"/>
+								<input name="gPic" id="" class="info-textfield" type="hidden" value="${goods.gPic}"/>
 					
 							<!--<td><span class="">用户名不可更改。</span></td>-->
 						</tr>
@@ -71,7 +71,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								<span class="">描述</span>
 							</td>
 							<td>
-								<input name="gdescribe" id="" class="info-textfield" type="text" value="${goods.gDescribe}"/>
+								<input name="gDescribe" id="" class="info-textfield" type="text" value="${goods.gDescribe}"/>
 							</td>
 							<!--<td><span class="">用户名不可更改。</span></td>-->
 						</tr>
@@ -94,7 +94,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 									<!-- 按钮 -->
 									<div class="div-btns" style="float: left;">
 										
-											<input class="bt_green" type="submit" name="bt_green" id="bt_green" value="修改果品">
+											<input class="bt_green" type="submit"  id="bt_green" value="修改果品">
 										<a href="GoodsServlet?todo=searchGoods" class="bt_green" onclick="reset()">返 回</a>
 									</div>
 									<!--end 按钮 -->

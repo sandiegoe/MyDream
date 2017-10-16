@@ -9,5 +9,7 @@ public interface UserDao {
 	public User searchUser(String uPhone);
 
 	public User checkUser(String uPhone);
+
+	public void update(User user);
 	
 }

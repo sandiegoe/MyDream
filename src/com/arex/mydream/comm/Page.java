@@ -36,8 +36,8 @@ public class Page {
 	public int getPageNo() {
 		if (pageNo > pageCount)
 			this.pageNo = pageCount;
-		if (pageNo < 1)
-			pageNo = 0;
+		if (pageNo <= 0)
+			this.pageNo = 1;
 		return pageNo;
 	}
 

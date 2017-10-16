@@ -15,7 +15,7 @@ import org.springframework.orm.hibernate5.HibernateTemplate;
 import org.springframework.stereotype.Component;
 
 import com.arex.mydream.dao.GoodsDao;
-import com.arex.mydream.entity.Goods;
+import com.arex.mydream.model.Goods;
 
 @Component
 @Transactional
@@ -94,25 +94,20 @@ public class GoodsDaoImpl implements GoodsDao {
 	}
 
 	@Override
-	public Goods searchByGname(final String gName) {
-		
-		Goods goods = null;
+	public List<Goods> searchByGname(final String gName) {
 		
 		List<Goods> listGS  = hibernateTemplate.execute(new HibernateCallback<List<Goods>>() {
 
 			@Override
 			public List<Goods> doInHibernate(Session session) throws HibernateException {
-				List<Goods> listGS = (List<Goods>) session.createQuery("from Goods o where o.gName=:gName").setParameter("gName", gName)
+				List<Goods> listGS = (List<Goods>) session.createQuery("from Goods o where o.gName=:gName order by o.gId desc").setParameter("gName", gName)
 					.getResultList();
 				return listGS;
 			}
 		});
 		
-		if (listGS!=null && listGS.size()>0) {
-			goods = listGS.get(0);
-		}
 		
-		return goods;
+		return listGS;
 	}
 
 	@Override
@@ -148,5 +143,52 @@ public class GoodsDaoImpl implements GoodsDao {
 		for (int i = 0; objects != null && i < objects.length; ++i) {
 			query.setParameter(i, objects[i]);
 		}
+	}
+
+	@Override
+	public List<Goods> searchGoodsBySid(final int sId, int pageNo, final int pageSize) {
+		
+		if (pageNo <= 0) {
+			pageNo = 1;
+		}
+		final int firstResult = (pageNo-1)*pageSize;
+		
+		List<Goods> listGS = hibernateTemplate.execute(new HibernateCallback<List<Goods>>() {
+
+			@Override
+			public List<Goods> doInHibernate(Session session) throws HibernateException {
+				Query query = session.createQuery("select goods from Goods goods left join Repertory repertory on (goods.gId=repertory.rGid) "
+						+ "left join Store store on (repertory.rSid=store.sId) where sId=:sId")
+					.setParameter("sId", sId)
+					.setFirstResult(firstResult)
+					.setMaxResults(pageSize);
+				List<Goods> listGS = query.getResultList();
+				return listGS;
+			}
+		});
+		
+		return listGS;
+	}
+
+	@Override
+	public List<Goods> searchGoodsBySid(final int sId) {
+		List<Goods> listGS = hibernateTemplate.execute(new HibernateCallback<List<Goods>>() {
+
+			@Override
+			public List<Goods> doInHibernate(Session session) throws HibernateException {
+				Query query = session.createQuery("select goods from Goods goods left join Repertory repertory on (goods.gId=repertory.rGid) "
+						+ "left join Store store on (repertory.rSid=store.sId) where sId=:sId")
+					.setParameter("sId", sId);
+				List<Goods> listGS = query.getResultList();
+				return listGS;
+			}
+		});
+		
+		return listGS;
+	}
+
+	@Override
+	public int searchGoodsCountBySid(int sId) {
+		return this.searchGoodsBySid(sId).size();
 	}
 }

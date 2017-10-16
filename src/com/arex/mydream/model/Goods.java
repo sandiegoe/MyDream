@@ -1,4 +1,4 @@
-package com.arex.mydream.entity;
+package com.arex.mydream.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

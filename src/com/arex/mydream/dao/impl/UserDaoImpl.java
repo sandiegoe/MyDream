@@ -1,20 +1,19 @@
 package com.arex.mydream.dao.impl;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 import javax.annotation.Resource;
-import javax.servlet.jsp.jstl.sql.Result;
 
 import org.springframework.orm.hibernate5.HibernateTemplate;
 import org.springframework.stereotype.Component;
 
 import com.arex.mydream.dao.UserDao;
+import com.arex.mydream.model.User;
+
+
 
 @Component("userDAO")
-public class UserDAOImpl implements UserDAO {
->>>>>>> 4c4aa453d3b1052e44e7b42208e91eb1079edf79:src/com/arex/mydream/dao/impl/UserDAOImpl.java
+public class UserDaoImpl implements UserDao {
 
 	private HibernateTemplate hibernateTemplate;
 	
@@ -51,6 +50,11 @@ public class UserDAOImpl implements UserDAO {
 			user = users.get(0);
 		}
 		return user;
+	}
+
+	@Override
+	public void update(User user) {
+		hibernateTemplate.update(user);
 	}
 
 }

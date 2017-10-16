@@ -1,4 +1,4 @@
-package com.arex.mydream.entity.view;
+package com.arex.mydream.action.vo;
 
 public class GoodsDTO {
 
@@ -9,6 +9,26 @@ public class GoodsDTO {
 	private String gAddress;// 商品产地
 	private String gPic;// 商品图片
 	private String gDescribe; // 商品描述
+	
+	
+	private String sName;
+	public String getsName() {
+		return sName;
+	}
+
+	public void setsName(String sName) {
+		this.sName = sName;
+	}
+
+	public void setRnum(String rnum) {
+		this.rnum = rnum;
+	}
+
+	private String rnum;
+
+	public String getRnum() {
+		return rnum;
+	}
 
 	public GoodsDTO(int gId, String gName, String gType, Double gPrice, String gAddress, String gPic,
 			String gDescribe) {

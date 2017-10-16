@@ -1,8 +1,8 @@
-package com.arex.mydream.biz;
+package com.arex.mydream.service;
 
 import java.util.List;
 
-import com.arex.mydream.entity.view.GoodsDTO;
+import com.arex.mydream.action.vo.GoodsDTO;
 
 public interface GoodsBiz {
 
@@ -46,7 +46,7 @@ public interface GoodsBiz {
 	 * @param gName
 	 * @return
 	 */
-	public GoodsDTO searchByGname(String gName);
+	public List<GoodsDTO> searchByGname(String gName);
 
 	/**
 	 * 分页查询
@@ -70,5 +70,18 @@ public interface GoodsBiz {
 	 * 魏陈霞 拼接条件查询
 	 */
 	public List<GoodsDTO> searchByCondition(GoodsDTO goodsDTO);
+
+	/**
+	 * 查找指定店面(sId)的商品: 联合goods, repertory 和 store表
+	 * 分页查询
+	 * @param getsId
+	 * @param pageNo
+	 * @param pageSize
+	 */
+	public List<GoodsDTO> searchGoodBysId(int sId, int pageNo, int pageSize);
+	
+	public List<GoodsDTO> searchGoodBysId(int sId);
+
+	public int searchGoodsCountBySid(int getsId);
 
 }

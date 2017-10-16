@@ -25,13 +25,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <div class="right_content">            
         <h2>果品列表</h2>
 		<div class="top-input">
-			<form action="GoodsServlet?todo=searchnameGoods" name="search" method="post">
+			<form action="goodsAction_searchnameGoods" name="search" method="post">
             	<table id="top-table">
                     <tbody>
                         <tr>
                             <td>
 								<span><span class="rounded">果</span>品名称</span>
-								<select name="gname" size="1" class="" id="">
+								<select name="gName" size="1" class="" id="">
 								<c:forEach var="good" items="${listGood}">
 								  <option>${good.gName} </option>				
 								 	</c:forEach>		
@@ -68,23 +68,23 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             <tbody>
        
                 <!-- 单条记录 -->
-              
+               <c:forEach items="${requestScope.listGood}" var="goods">
                 <tr>
-                 
                     <td><input type="checkbox" name="" id="" value=""/></td>               
                     <td>${goods.gName} </td>
                     <td>${goods.gId}</td>
-                    <td><%-- ${goods.gPrice} --%></td>
+                    <td>${goods.gPrice}</td>
                     <td>${goods.gType}</td>
                     <td>${goods.gAddress}</td>
                     <td>2016/03/09</td>
                     <td><a href="update.html"></a></td>
                     <td>${goods.gDescribe}</td>
-                    <td><a href="GoodsServlet?todo=searchupdateGoods&&gid=${goods.gId}"><img src="admin/images/user_edit.png" alt="" title="" border="0" /></a></td>
-                    <td><a href="GoodsServlet?todo=deleteGoods&&gid=${goods.gId}" class="ask"><img src="admin/images/trash.png" alt="" title="" border="0" /></a></td>
+                    <td><a href="goodsAction_searchupdateGoods?gId=${goods.gId}"><img src="admin/images/user_edit.png" alt="" title="" border="0" /></a></td>
+                    <td><a href="goodsAction_deleteGoods?gId=${goods.gId}" class="ask"><img src="admin/images/trash.png" alt="" title="" border="0" /></a></td>
                 </tr>
+                </c:forEach>
                 <!--end 单条记录 -->      
-
+			
             </tbody>
             <tfoot>
 				<tr>
@@ -97,8 +97,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<div class="btns-pagenav">
 			<!-- 按钮 -->
             <div class="div-btns">
-            <div class="div-btns"><a href="GoodsServlet?todo=searchGoods" class="bt_green">分页显示<span class="rounded">商品</span></a>
-                <a href="admin/addgoods.jsp" class="bt_green">添 加 <span class="rounded">果</span> 品</a>
+            <div class="div-btns"><a href="goodsAction_searchGoods" class="bt_green">分页显示<span class="rounded">商品</span></a>
+                <a href="goodsAction_addPage" class="bt_green">添 加 <span class="rounded">果</span> 品</a>
             </div> 
 			<!--end 按钮 --> 
             

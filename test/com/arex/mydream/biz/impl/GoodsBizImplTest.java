@@ -9,8 +9,8 @@ import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.arex.mydream.biz.GoodsBiz;
-import com.arex.mydream.entity.view.GoodsDTO;
+import com.arex.mydream.action.vo.GoodsDTO;
+import com.arex.mydream.service.GoodsBiz;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations="classpath:beans.xml")
@@ -18,6 +18,27 @@ public class GoodsBizImplTest {
 
 	@Resource(name="goodsBizImpl")
 	private GoodsBiz goodsBiz;
+	
+	@Test
+	public void testSearchGoodsBySidWithPage() {
+		int sId = 8;
+		int pageNo = 1;
+		int pageSize = 2;
+		
+		List<GoodsDTO> listGO = goodsBiz.searchGoodBysId(sId, pageNo, pageSize);
+		for (GoodsDTO goodsDTO : listGO) {
+			System.out.println(goodsDTO.getgId() + "  --  " + goodsDTO.getgDescribe());
+		}
+	}
+	
+	@Test
+	public void testSearchGoodsBySid() {
+		int sId = 8;
+		List<GoodsDTO> listGO = goodsBiz.searchGoodBysId(sId);
+		for (GoodsDTO goodsDTO : listGO) {
+			System.out.println(goodsDTO.getgId() + "  --  " + goodsDTO.getgDescribe());
+		}
+	}
 	
 	@Test
 	public void testAddGoods() {
@@ -72,8 +93,10 @@ public class GoodsBizImplTest {
 	@Test
 	public void testSearchByGname() {
 		String gName = "越南火龙果";
-		GoodsDTO goodsDTO = goodsBiz.searchByGname(gName );
-		System.out.println(goodsDTO.getgId() + "  ---  " + goodsDTO.getgName());
+		List<GoodsDTO> goodsDTOList = goodsBiz.searchByGname(gName );
+		for (GoodsDTO goodsDTO2 : goodsDTOList) {
+			System.out.println(goodsDTO2.getgId() + "  --  " + goodsDTO2.getgDescribe());
+		}
 	}
 	
 	@Test

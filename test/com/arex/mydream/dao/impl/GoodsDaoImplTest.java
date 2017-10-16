@@ -12,7 +12,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.arex.mydream.dao.GoodsDao;
-import com.arex.mydream.entity.Goods;
+import com.arex.mydream.model.Goods;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations="classpath:beans.xml")
@@ -20,6 +20,27 @@ public class GoodsDaoImplTest {
 
 	@Resource(name="goodsDaoImpl")
 	private GoodsDao goodsDao;
+	
+	
+	@Test
+	public void testSearchGoodsBySid() {
+		int sId = 8;
+		List<Goods> listGS = goodsDao.searchGoodsBySid(sId);
+		for (Goods goods : listGS) {
+			System.out.println(goods.getgId() + "   ----    " + goods.getgName());
+		}
+	}
+	
+	@Test
+	public void testSearchGoodsBySidWithPage() {
+		int sId = 8;
+		int pageNo = 2;
+		int pageSize = 2;
+		List<Goods> listGS = goodsDao.searchGoodsBySid(sId, pageNo, pageSize);
+		for (Goods goods : listGS) {
+			System.out.println(goods.getgId() + "   ----    " + goods.getgName());
+		}
+	}
 	
 	@Test
 	public void testAdd() {
@@ -70,8 +91,10 @@ public class GoodsDaoImplTest {
 	
 	@Test
 	public void testSearchByGname() {
-		Goods goods = goodsDao.searchByGname("越南火龙果");
-		System.out.println(goods.getgId() + "   ----    " + goods.getgName());
+		List<Goods> listGS = goodsDao.searchByGname("越南火龙果");
+		for (Goods goods : listGS) {
+			System.out.println(goods.getgId() + "   ----    " + goods.getgName());
+		}
 	}
 	
 	@Test

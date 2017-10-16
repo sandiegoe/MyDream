@@ -22,8 +22,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<div id="login_container">
 		<div id="innerlogin">
             <form action="adminAction_login" method="post">
-                <input name="userName" id="" type="text" class="logininput" value="用户名" onblur="if (this.value == ''){this.value = '用户名';}" onfocus="if (this.value == '用户名'){this.value = '';}"/>
-                <input name="userPwd" type="password" class="logininput" value="密码" onblur="if (this.value == ''){this.value = '密码';}" onfocus="if (this.value == '密码'){this.value = '';}"/>
+                <input name="uPhone" id="" type="text" class="logininput" placeholder="用户名" value="15956949297" onblur="if (this.value == ''){this.value = '用户名';}" onfocus="if (this.value == '用户名'){this.value = '';}"/>
+                <input name="uPwd" type="password" class="logininput" placeholde="密码" value="shenzhaoquan" onblur="if (this.value == ''){this.value = '密码';}" onfocus="if (this.value == '密码'){this.value = '';}"/>
                 <input name="" type="submit" class="loginbtn"/>
             </form>
 		</div>

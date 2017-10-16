@@ -17,7 +17,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	</head>
 
 	<body>
-		<form id="userAdd" class="userAdd" action="StoreServlet?todo=addStore" method="post">
+		<form id="userAdd" class="userAdd" action="storeAction_addStore" method="post">
 		<!--  <input  type="hidden" value="searchStore" name="todo" > -->
 			<div class="right_content" align="center">
 				<h2>申请开店</h2>

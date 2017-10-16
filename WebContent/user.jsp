@@ -77,7 +77,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<a href="zaixianchongzhi.jsp" >在线充值</a>
 		<a href="zhongzhifapiao.jsp" >充值发票</a>
 		 
-                                   <a href="StoreServlet?todo=MyStore" >管理我的店面 </a>
+                                   <a href="storeAction_myStore" >管理我的店面 </a>
                                      
                                     <a href="admin/kaidian.jsp" >申请开店</a>
                                    

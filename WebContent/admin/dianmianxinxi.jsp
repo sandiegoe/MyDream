@@ -17,7 +17,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	</head>
 
 	<body>
-		<form id="userAdd" class="userAdd" action="StoreServlet?todo=updateStore" method="post">
+		<form id="userAdd" class="userAdd" action="storeAction_updateStore" method="post">
 		<!--  <input  type="hidden" value="searchStore" name="todo" > -->
 			<div class="right_content" align="center">
 				<h2>店面信息</h2>
@@ -30,8 +30,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							</td>
 							<%-- <!--  <%   Store s=(Store)request.getAttribute("store"); %>--> --%>
 							<td>
-								<input name="sName" id="" class="info-textfield" type="hidden"  value="${requestScope.store.sName}"  />
-							    <span>${requestScope.store.sName}</span>
+								<input name="sName" id="" class="info-textfield" type="hidden"  value="${sessionScope.store.sName}"  />
+							    <span>${sessionScope.store.sName}</span>
 							
 							</td>
 							<!--<td><span class="">用户名不可更改。</span></td>-->
@@ -42,7 +42,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								<span class="">联系方式</span>
 							</td>
 							<td>
-								<input name="sPhone" id="" class="info-textfield" type="text" value="${requestScope.store.sPhone} " />
+								<input name="sPhone" id="" class="info-textfield" type="text" value="${sessionScope.store.sPhone} " />
 							</td>
 							<!--<td><span class="">用户名不可更改。</span></td>-->
 						</tr>
@@ -51,7 +51,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								<span class="">店家地址</span>
 							</td>
 							<td>
-								<input name="sAddress" id="" class="info-textfield" type="text" value="${requestScope.store.sAddress} " />
+								<input name="sAddress" id="" class="info-textfield" type="text" value="${sessionScope.store.sAddress} " />
 							</td>
 							<!--<td><span class="">用户名不可更改。</span></td>-->
 						</tr>

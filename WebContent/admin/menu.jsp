@@ -44,7 +44,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		        <div class="submenu">
 		            <ul>
 		                <li><a href="admin/yulanshangcheng.html" target="mainFrame">预览商城</a></li>
-		                <li><a href="StoreServlet?todo=searchStore" target="mainFrame">店面信息</a></li>
+		                <li><a href="storeAction_searchStore" target="mainFrame">店面信息</a></li>
 		                
 		            </ul>
 		        </div>
