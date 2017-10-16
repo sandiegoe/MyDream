@@ -37,7 +37,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                             </a> <em></em>
                         </li>
                         <li class="">
-                            <a href="RepertoryServlet?todo=searchCondition&pageNo=1" target="_blank">
+                            <a href="repertoryAction_searchCondition?pageNo=1" target="_blank">
                                 鲜果
                                 <span>Fruit</span>
                             </a> <em></em>

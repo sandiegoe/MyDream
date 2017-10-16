@@ -16,10 +16,53 @@
 			<result name="loginPage">/login.jsp</result>
 			<result name="zhucePage">/zhuce.jsp</result>
 			<result name="zhuce">/user.jsp</result>
-			<result name="user">/user.jsp</result>
 			<result name="jibenziliao">/jibenziliao.jsp</result>
-			<allowed-methods>zhuce,loginRand,ajax,loginPage,zhucePage,user,loginOut,searchjibenziliao</allowed-methods>
-			
+			<result name="user" type="redirect">/user.jsp</result>
+			<result name="indexPage">/index.jsp</result>
+			<allowed-methods>zhuce,zhuceRand,loginRand,loginUser,ajax,loginPage,zhucePage,user,indexPage,userPage,loginOut,searchjibenziliao</allowed-methods>
+		</action>
+		
+		<action name="adminAction_*" class="adminAction" method="{1}">
+			<result name="loginPage">/admin/login.jsp</result>
+			<result name="index">/admin/index.jsp</result>
+			<result name="header">/admin/header.jsp</result>
+			<result name="menu">/admin/menu.jsp</result>
+			<result name="welcome">/admin/welcome.jsp</result>
+			<result name="footer">/admin/footer.jsp</result>
+			<result name="toIndex" type="redirectAction">adminAction_index</result>
+			<allowed-methods>loginPage,login,index,header,menu,welcome,footer,loginOut</allowed-methods>
+		</action>
+		
+		<action name="goodsAction_*" class="goodsAction" method="{1}">
+			<result name="searchGoods">/admin/goods.jsp</result>
+			<result name="addPage">/admin/addgoods.jsp</result>
+			<result name="toSearchGoods" type="redirectAction">goodsAction_searchGoods</result>
+			<result name="goodsone">/admin/goodsone.jsp</result>
+			<result name="goodsxiugai">/admin/goodsxiugai.jsp</result>
+			<allowed-methods>searchGoods,addPage,add,searchnameGoods,searchupdateGoods,deleteGoods,updateGoods,searchAllGoods2</allowed-methods>
+		</action>
+		
+		<action name="storeAction_*" class="storeAction" method="{1}">
+			<result name="toAdminIndex" type="redirectAction">adminAction_index</result>
+			<result name="toAdminLoginPage" type="redirectAction">adminAction_loginPage</result>
+			<result name="dianmianxinxi">/admin/dianmianxinxi.jsp</result>
+			<result name="toUserPage" type="redirectAction">userAction_userPage</result>
+			<allowed-methods>addStore, searchStore,updateStore,myStore</allowed-methods>
+		</action>
+		
+		<action name="repertoryAction_*" class="repertoryAction" method="{1}">
+			<result name="goumai">/goumai.jsp</result>
+			<result name="toUserIndex" type="redirectAction">userAction_indexPage</result>
+			<result name="fruit">/fruit.jsp</result>
+			<result name="gift">/gift.jsp</result>
+			<allowed-methods>searchBygid,searchfruit,searchCondition,searchGiftCondition</allowed-methods>
+		</action>
+		
+		<action name="gowuAction_*" class="gowuAction" method="{1}">
+			<result name="gouwuche">/gouwuche.jsp</result>
+			<result name="toUserIndex" type="redirectAction">userAction_indexPage</result>
+			<result name="toUserLoginPage" type="redirectAction">userAction_loginPage</result>
+			<allowed-methods>gouwuche</allowed-methods>
 		</action>
 		
 	</package>

@@ -16,6 +16,7 @@ import org.springframework.stereotype.Component;
 import com.arex.mydream.action.vo.UserInfo;
 import com.arex.mydream.model.User;
 import com.arex.mydream.service.UserService;
+import com.arex.mydream.util.SHA1jiami;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 
@@ -30,7 +31,15 @@ public class UserAction extends ActionSupport implements ModelDriven,ServletResp
 	public UserAction() {
 		
 	}
+	
+	public String userPage() {
+		return "user";
+	}
 
+	public String indexPage() {
+		return "indexPage";
+	}
+	
 	public String loginPage() {
 		return "loginPage";
 	}
@@ -65,6 +74,10 @@ public class UserAction extends ActionSupport implements ModelDriven,ServletResp
 		} else {
 			if (userInfo.getRand().equals(sRand)) {
 				userInfo.setuFlag("1");
+				
+				//加密用户密码
+				//String SAUpwd = SHA1jiami.SHA1Digest(uPwd);// 加密用户输入的密码
+				userInfo.setuPwd(SHA1jiami.SHA1Digest(userInfo.getuPwd()));
 				userService.addUser(userInfo);
 
 				User user1 = userService.searchUser(userInfo.getuPhone());

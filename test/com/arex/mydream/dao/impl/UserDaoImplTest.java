@@ -1,26 +1,23 @@
-package com.arex.mydream.dao.impl.test;
+package com.arex.mydream.dao.impl;
 
 import javax.annotation.Resource;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.arex.mydream.dao.UserDAO;
-import com.arex.mydream.dao.impl.UserDAOImpl;
+import com.arex.mydream.dao.UserDao;
 import com.arex.mydream.model.User;
 
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations="classpath:beans.xml")
-public class UserDAOImplTest {
+public class UserDaoImplTest {
 	
-	private UserDAO userDAO = new UserDAOImpl();
+	private UserDao userDAO = new UserDaoImpl();
 	@Resource(name="userDAOImpl")
-	private UserDAO userDAO2;
+	private UserDao userDAO2;
 
 	@Test
 	public void testAddUser() {

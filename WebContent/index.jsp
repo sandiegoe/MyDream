@@ -67,11 +67,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    <div class="container_12">
             <div class="grid_8">
                   <div id="sliderA" class="slider" width="980" height="400" >
-                  <a href="RepertoryServlet?todo=searchBygid&gid=35"><img src="img/20160325171956.png" width="1600px" height="500" /></a>
-				<a href="RepertoryServlet?todo=searchBygid&gid=18"><img src="img/b1d1f25c2be525722f3ad33cea6a22bb.jpg"  width="1600px" height="500"/></a>
-				<a href="RepertoryServlet?todo=searchBygid&gid=54"><img src="img/niuyouguo.jpg" width="1600px " height="500"/></a>
-				<a href="RepertoryServlet?todo=searchBygid&gid=32"><img src="img/putaoyou.jpg" width="1600px" height="500" /></a>
-				<a href="RepertoryServlet?todo=searchBygid&gid=30"><img src="img/20160325170332.png" width="1600px" height="500" /></a>
+                  <a href="repertoryAction_searchBygid?rGid=35"><img src="img/20160325171956.png" width="1600px" height="500" /></a>
+				<a href="repertoryAction_searchBygid?rGid=18"><img src="img/b1d1f25c2be525722f3ad33cea6a22bb.jpg"  width="1600px" height="500"/></a>
+				<a href="repertoryAction_searchBygid?rGid=54"><img src="img/niuyouguo.jpg" width="1600px " height="500"/></a>
+				<a href="repertoryAction_searchBygid?rGid=32"><img src="img/putaoyou.jpg" width="1600px" height="500" /></a>
+				<a href="repertoryAction_searchBygid?rGid=30"><img src="img/20160325170332.png" width="1600px" height="500" /></a>
 				
 				
 			</div>
@@ -84,9 +84,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <!-- 中部广告开始 -->
 <div class="show-ad w-1280">
   <ul class="clearfix">
-    <li class="pull-left "> <a href="RepertoryServlet?todo=searchBygid&gid=59" target="_blank"> <img alt="" class="lazy" src="img/7b87d255c09845d0fc55ec577ae57471.jpg" src="img/EmptyHome@2x.png"> </a> </li>
-    <li class="pull-left "> <a href="RepertoryServlet?todo=searchBygid&gid=54" target="_blank"> <img alt="" class="lazy" src="img/e62edd57716e6b6c5054ae8661869b9f.jpg" src="img/EmptyHome@2x.png"> </a> </li>
-    <li class="pull-left last"> <a href="RepertoryServlet?todo=searchBygid&gid=61" target="_blank"> <img alt="" class="lazy" src="img/528ab8c3e40c22964dfe3564e6fd33a0.jpg" src="img/EmptyHome@2x.png"> </a> </li>
+    <li class="pull-left "> <a href="repertoryAction_searchBygid?rGid=59" target="_blank"> <img alt="" class="lazy" src="img/7b87d255c09845d0fc55ec577ae57471.jpg" src="img/EmptyHome@2x.png"> </a> </li>
+    <li class="pull-left "> <a href="repertoryAction_searchBygid?rGid=54" target="_blank"> <img alt="" class="lazy" src="img/e62edd57716e6b6c5054ae8661869b9f.jpg" src="img/EmptyHome@2x.png"> </a> </li>
+    <li class="pull-left last"> <a href="repertoryAction_searchBygid?rGid=61" target="_blank"> <img alt="" class="lazy" src="img/528ab8c3e40c22964dfe3564e6fd33a0.jpg" src="img/EmptyHome@2x.png"> </a> </li>
   </ul>
 </div>
 <!-- 水果品类 -->
@@ -100,8 +100,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <div class="good-list clearfix">
       <ul>
         <li id="newkind" class="pull-left first" pid="8010" ppid="10185" type="normal" pno="2151231101">
-          <div class="img-scale"> <a href="RepertoryServlet?todo=searchBygid&gid=1" target="_blank"> <img  class="lazy" src="img/497ca19fffafa51c64039d83da4e7f96.jpg" alt="2131231"> </a> </div>
-          <div class="wrap"> <a href="RepertoryServlet?todo=searchBygid&gid=1" target="_blank">	 
+          <div class="img-scale"> <a href="repertoryAction_searchBygid?rGid=1" target="_blank"> <img  class="lazy" src="img/497ca19fffafa51c64039d83da4e7f96.jpg" alt="2131231"> </a> </div>
+          <div class="wrap"> <a href="repertoryAction_searchBygid?rGid=1" target="_blank">	 
             <p class="first-p"></p>
             <p>智利甜心樱桃</p>
             <p>￥128.00/2斤</p>
@@ -114,8 +114,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
           </div>
         </li>
         <li class="pull-left" pid="8178" ppid="10354" type="normal" pno="2160106103">
-          <div class="img-scale"> <a href="RepertoryServlet?todo=searchBygid&gid=3" target="_blank"> <img class="lazy" src="img/1-270x270-3384-WX7U25FR.jpg" alt="" src="img/default.png"> </a> </div>
-          <div class="wrap"> <a target="_blank" href="RepertoryServlet?todo=searchBygid&gid=3">
+          <div class="img-scale"> <a href="repertoryAction_searchBygid?rGid=3" target="_blank"> <img class="lazy" src="img/1-270x270-3384-WX7U25FR.jpg" alt="" src="img/default.png"> </a> </div>
+          <div class="wrap"> <a target="_blank" href="repertoryAction_searchBygid?rGid=3">
             <p class="first-p"></p>
             <p>佳沛新西兰有机绿奇异果</p>
             <p>￥49/12个装</p>
@@ -128,8 +128,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
           </div>
         </li>
         <li class="pull-left" pid="8079" ppid="10255" type="normal" pno="2160105105">
-          <div class="img-scale"> <a href="RepertoryServlet?todo=searchBygid&gid=7" target="_blank"> <img class="lazy" src="img/caomei1.jpg" alt="" src="img/default.png"> </a> </div>
-          <div class="wrap"> <a target="_blank" href="RepertoryServlet?todo=searchBygid&gid=7">
+          <div class="img-scale"> <a href="repertoryAction_searchBygid?rGid=7" target="_blank"> <img class="lazy" src="img/caomei1.jpg" alt="" src="img/default.png"> </a> </div>
+          <div class="wrap"> <a target="_blank" href="repertoryAction_searchBygid?rGid=7">
             <p class="first-p"></p>
             <p>长柄玫瑰草莓</p>
             <p>￥26/1斤装</p>
@@ -142,8 +142,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
           </div>
         </li>
         <li class="pull-left" pid="8077" ppid="10253" type="normal" pno="2160105101">
-          <div class="img-scale"> <a href="RepertoryServlet?todo=searchBygid&gid=53" target="_blank"> <img class="lazy" src="img/1-370x370-8077-D8ASXR89.jpg" alt="" src="img/default.png"> </a> </div>
-          <div class="wrap"> <a target="_blank" href="RepertoryServlet?todo=searchBygid&gid=53">
+          <div class="img-scale"> <a href="repertoryAction_searchBygid?rGid=53" target="_blank"> <img class="lazy" src="img/1-370x370-8077-D8ASXR89.jpg" alt="" src="img/default.png"> </a> </div>
+          <div class="wrap"> <a target="_blank" href="repertoryAction_searchBygid?rGid=53">
             <p class="first-p"></p>
             <p>泰国椰青</p>
             <p>￥69.00/4个装</p>
@@ -156,8 +156,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
           </div>
         </li>
         <li class="pull-left" pid="3817" ppid="5708" type="normal" pno="20149219">
-          <div class="img-scale"> <a href="RepertoryServlet?todo=searchBygid&gid=57" target="_blank"> <img class="lazy" src="img/1-370x370-3817-H17S4KAD.jpg" alt="" src="img/default.png"> </a> </div>
-          <div class="wrap"> <a target="_blank" href="RepertoryServlet?todo=searchBygid&gid=57">
+          <div class="img-scale"> <a href="repertoryAction_searchBygid?rGid=57" target="_blank"> <img class="lazy" src="img/1-370x370-3817-H17S4KAD.jpg" alt="" src="img/default.png"> </a> </div>
+          <div class="wrap"> <a target="_blank" href="repertoryAction_searchBygid?rGid=57">
             <p class="first-p"></p>
             <p>云南牛奶青枣</p>
             <p>￥58.00/2斤装</p>
@@ -170,8 +170,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
           </div>
         </li>
         <li class="pull-left" pid="7911" ppid="10085" type="normal" pno="2151225101">
-          <div class="img-scale"> <a href="RepertoryServlet?todo=searchBygid&gid=3" target="_blank"> <img class="lazy" src="img/1-370x370-7911-1P7DTC48.jpg" alt="" src="img/default.png"> </a> </div>
-          <div class="wrap"> <a target="_blank" href="RepertoryServlet?todo=searchBygid&gid=3">
+          <div class="img-scale"> <a href="repertoryAction_searchBygid?rGid=3" target="_blank"> <img class="lazy" src="img/1-370x370-7911-1P7DTC48.jpg" alt="" src="img/default.png"> </a> </div>
+          <div class="wrap"> <a target="_blank" href="repertoryAction_searchBygid?rGid=3">
             <p class="first-p"></p>
             <p>佳沛新西兰有机绿奇异果 </p>
             <p>￥49.00/12个装</p>
@@ -184,8 +184,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
           </div>
         </li>
         <li class="pull-left" pid="7805" ppid="9978" type="normal" pno="2151222106">
-          <div class="img-scale"> <a href="RepertoryServlet?todo=searchBygid&gid=26" target="_blank"> <img class="lazy" src="img/1-270x270-3265-XAK35HBR.jpg" alt="" src="img/default.png"> </a> </div>
-          <div class="wrap"> <a target="_blank" href="RepertoryServlet?todo=searchBygid&gid=26">
+          <div class="img-scale"> <a href="repertoryAction_searchBygid?rGid=26" target="_blank"> <img class="lazy" src="img/1-270x270-3265-XAK35HBR.jpg" alt="" src="img/default.png"> </a> </div>
+          <div class="wrap"> <a target="_blank" href="repertoryAction_searchBygid?rGid=26">
             <p class="first-p"></p>
             <p>菲律宾凤梨</p>
             <p>￥45/2个装</p>
@@ -210,7 +210,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <div class="good-list clearfix">
       <ul>
         <li class="pull-left first" pid="7365" ppid="9530" type="normal" pno="2151208108">
-          <div class="s-img"> <a href="RepertoryServlet?todo=searchBygid&gid=10" target="_blank"> <img class="lazy" src="img/1-370x370-7365-UPX2C3HB.jpg" alt="" src="img/default.png"> </a> </div>
+          <div class="s-img"> <a href="repertoryAction_searchBygid?rGid=10" target="_blank"> <img class="lazy" src="img/1-370x370-7365-UPX2C3HB.jpg" alt="" src="img/default.png"> </a> </div>
           <div class="s-info clearfix">
             <div class="s-name pull-left"> <span>海南西州蜜瓜</span> </div>
             <div class="s-unit pull-left"> <span>￥35.00/1个装</span> </div>
@@ -218,7 +218,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
           </div>
         </li>
         <li class="pull-left " pid="7144" ppid="9298" type="normal" pno="2151231112">
-          <div class="s-img"> <a href="RepertoryServlet?todo=searchBygid&gid=61" target="_blank"> <img class="lazy" src="img/1-370x370-7144-1D9PAHK7.jpg" alt="" src="img/default.png"> </a> </div>
+          <div class="s-img"> <a href="repertoryAction_searchBygid?rGid=61" target="_blank"> <img class="lazy" src="img/1-370x370-7144-1D9PAHK7.jpg" alt="" src="img/default.png"> </a> </div>
           <div class="s-info clearfix">
             <div class="s-name pull-left"> <span>新疆库尔勒香梨</span> </div>
             <div class="s-unit pull-left"> <span>￥59.00/4斤装</span> </div>
@@ -226,7 +226,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
           </div>
         </li>
         <li class="pull-left " pid="3839" ppid="5741" type="normal" pno="201411658">
-          <div class="s-img"> <a href="RepertoryServlet?todo=searchBygid&gid=56" target="_blank"> <img class="lazy" src="img/qingpingguo1.jpg" alt="" src="img/default.png"> </a> </div>
+          <div class="s-img"> <a href="repertoryAction_searchBygid?rGid=56" target="_blank"> <img class="lazy" src="img/qingpingguo1.jpg" alt="" src="img/default.png"> </a> </div>
           <div class="s-info clearfix">
             <div class="s-name pull-left"> <span>法国苹果</span> </div>
             <div class="s-unit pull-left"> <span>￥18/1斤装</span> </div>
@@ -234,7 +234,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
           </div>
         </li>
         <li class="pull-left " pid="6434" ppid="8567" type="normal" pno="2150514132">
-          <div class="s-img"> <a href="RepertoryServlet?todo=searchBygid&gid=20" target="_blank"> <img class="lazy" src="img/1-370x370-6434-THKC4UFT.jpg" alt="" src="img/default.png"> </a> </div>
+          <div class="s-img"> <a href="repertoryAction_searchBygid?rGid=20" target="_blank"> <img class="lazy" src="img/1-370x370-6434-THKC4UFT.jpg" alt="" src="img/default.png"> </a> </div>
           <div class="s-info clearfix">
             <div class="s-name pull-left"> <span>泰国龙眼</span> </div>
             <div class="s-unit pull-left"> <span>￥49.00/2斤装</span> </div>
@@ -242,7 +242,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
           </div>
         </li>
         <li class="pull-left first" pid="3682" ppid="5567" type="normal" pno="201512268">
-          <div class="s-img"> <a href="RepertoryServlet?todo=searchBygid&gid=13" target="_blank"> <img class="lazy" src="img/1-370x370-3682-A9D9CDY9.jpg" alt="" src="img/default.png"> </a> </div>
+          <div class="s-img"> <a href="repertoryAction_searchBygid?rGid=13" target="_blank"> <img class="lazy" src="img/1-370x370-3682-A9D9CDY9.jpg" alt="" src="img/default.png"> </a> </div>
           <div class="s-info clearfix">
             <div class="s-name pull-left"> <span>秘鲁红提</span> </div>
             <div class="s-unit pull-left"> <span>￥39.00/2斤装</span> </div>
@@ -250,7 +250,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
           </div>
         </li>
         <li class="pull-left " pid="1979" ppid="2719" type="normal" pno="201411938">
-          <div class="s-img"> <a href="RepertoryServlet?todo=searchBygid&gid=17" target="_blank"> <img class="lazy" src="img/1-270x270-3493-RRKRR26C.jpg" alt="" src="img/default.png"> </a> </div>
+          <div class="s-img"> <a href="repertoryAction_searchBygid?rGid=17" target="_blank"> <img class="lazy" src="img/1-270x270-3493-RRKRR26C.jpg" alt="" src="img/default.png"> </a> </div>
           <div class="s-info clearfix">
             <div class="s-name pull-left"> <span>新奇士美国柠檬</span> </div>
             <div class="s-unit pull-left"> <span>￥58/2斤装</span> </div>
@@ -259,7 +259,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
         </li>
         <li class="pull-left " pid="3171" ppid="4765" type="normal" pno="33423">
-          <div class="s-img"> <a href="RepertoryServlet?todo=searchBygid&gid=51" target="_blank"> <img class="lazy" src="img/1-370x370-3171-88RHW16A.jpg" alt="" src="img/default.png"> </a> </div>
+          <div class="s-img"> <a href="repertoryAction_searchBygid?rGid=51" target="_blank"> <img class="lazy" src="img/1-370x370-3171-88RHW16A.jpg" alt="" src="img/default.png"> </a> </div>
           <div class="s-info clearfix">
             <div class="s-name pull-left"> <span>四川枇杷</span> </div>
             <div class="s-unit pull-left"> <span>￥39.00/1斤装</span> </div>
@@ -267,7 +267,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
           </div>
         </li>
         <li class="pull-left " pid="6952" ppid="9104" type="normal" pno="2151122101">
-          <div class="s-img"> <a href="RepertoryServlet?todo=searchBygid&gid=50" target="_blank"> <img class="lazy" src="img/yangtao1.jpg" alt="" src="img/default.png"> </a> </div>
+          <div class="s-img"> <a href="repertoryAction_searchBygid?rGid=50" target="_blank"> <img class="lazy" src="img/yangtao1.jpg" alt="" src="img/default.png"> </a> </div>
           <div class="s-info clearfix">
             <div class="s-name pull-left"> <span>台湾杨桃</span> </div>
             <div class="s-unit pull-left"> <span>￥25/2斤</span> </div>
@@ -364,7 +364,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <div class="good-list clearfix">
       <ul>
         <li class="pull-left first" pid="7644" ppid="9816" type="normal" pno="2151216111">
-          <div class="s-img"> <a href="RepertoryServlet?todo=searchBygid&gid=70" target="_blank"> <img class="lazy" src="img/heijialun1.jpg" alt="" src="img/default.png"> </a> </div>
+          <div class="s-img"> <a href="repertoryAction_searchBygid?rGid=70" target="_blank"> <img class="lazy" src="img/heijialun1.jpg" alt="" src="img/default.png"> </a> </div>
           <div class="s-info clearfix">
             <div class="s-name pull-left"> <span>台湾黑加仑</span> </div>
             <div class="s-unit pull-left"> <span>￥88.00/斤</span> </div>
@@ -372,7 +372,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
           </div>
         </li>
         <li class="pull-left " pid="7647" ppid="9819" type="normal" pno="2151216113">
-          <div class="s-img"> <a href="RepertoryServlet?todo=searchBygid&gid=63" target="_blank"> <img class="lazy" src="img/boluomi1.jpg" alt="" src="img/default.png"> </a> </div>
+          <div class="s-img"> <a href="repertoryAction_searchBygid?rGid=63" target="_blank"> <img class="lazy" src="img/boluomi1.jpg" alt="" src="img/default.png"> </a> </div>
           <div class="s-info clearfix">
             <div class="s-name pull-left"> <span>海南菠萝蜜</span> </div>
             <div class="s-unit pull-left"> <span>￥88.00/斤</span> </div>
@@ -380,7 +380,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
           </div>
         </li>
         <li class="pull-left " pid="7652" ppid="9824" type="normal" pno="2151216117">
-          <div class="s-img"> <a href="RepertoryServlet?todo=searchBygid&gid=64" target="_blank"> <img class="lazy" src="img/xianrenzhangguo1.jpg" alt="" src="img/default.png"> </a> </div>
+          <div class="s-img"> <a href="repertoryAction_searchBygid?rGid=64" target="_blank"> <img class="lazy" src="img/xianrenzhangguo1.jpg" alt="" src="img/default.png"> </a> </div>
           <div class="s-info clearfix">
             <div class="s-name pull-left"> <span>野生仙人掌果</span> </div>
             <div class="s-unit pull-left"> <span>￥138.00/斤</span> </div>
@@ -388,7 +388,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
           </div>
         </li>
         <li class="pull-left " pid="7656" ppid="9828" type="normal" pno="2151216119">
-          <div class="s-img"> <a href="RepertoryServlet?todo=searchBygid&gid=66" target="_blank"> <img class="lazy" src="img/jiaogua1.jpg" alt="" src="img/default.png"> </a> </div>
+          <div class="s-img"> <a href="repertoryAction_searchBygid?rGid=66" target="_blank"> <img class="lazy" src="img/jiaogua1.jpg" alt="" src="img/default.png"> </a> </div>
           <div class="s-info clearfix">
             <div class="s-name pull-left"> <span>非洲角瓜</span> </div>
             <div class="s-unit pull-left"> <span>￥234.00/斤</span> </div>
@@ -396,7 +396,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
           </div>
         </li>
         <li class="pull-left first" pid="7659" ppid="9831" type="normal" pno="2151216121">
-          <div class="s-img"> <a href="RepertoryServlet?todo=searchBygid&gid=65" target="_blank"> <img class="lazy" src="img/wuzhiju1.jpg" alt="" src="img/default.png"> </a> </div>
+          <div class="s-img"> <a href="repertoryAction_searchBygid?rGid=65" target="_blank"> <img class="lazy" src="img/wuzhiju1.jpg" alt="" src="img/default.png"> </a> </div>
           <div class="s-info clearfix">
             <div class="s-name pull-left"> <span>广东五指橘</span> </div>
             <div class="s-unit pull-left"> <span>￥66.00/斤</span> </div>
@@ -404,7 +404,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
           </div>
         </li>
         <li class="pull-left " pid="7663" ppid="9835" type="normal" pno="2151216123">
-          <div class="s-img"> <a href="RepertoryServlet?todo=searchBygid&gid=67" target="_blank"> <img class="lazy" src="img/shufanqie1.jpg" alt="" src="img/default.png"> </a> </div>
+          <div class="s-img"> <a href="repertoryAction_searchBygid?rGid=67" target="_blank"> <img class="lazy" src="img/shufanqie1.jpg" alt="" src="img/default.png"> </a> </div>
           <div class="s-info clearfix">
             <div class="s-name pull-left"> <span>苏州树番茄</span> </div>
             <div class="s-unit pull-left"> <span>￥25.00/斤</span> </div>
@@ -412,7 +412,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
           </div>
         </li>
         <li class="pull-left " pid="7667" ppid="9839" type="normal" pno="2151216126">
-          <div class="s-img"> <a href="RepertoryServlet?todo=searchBygid&gid=68" target="_blank"> <img class="lazy" src="img/danhuangguo1.jpg" alt="" src="img/default.png"> </a> </div>
+          <div class="s-img"> <a href="repertoryAction_searchBygid?rGid=68" target="_blank"> <img class="lazy" src="img/danhuangguo1.jpg" alt="" src="img/default.png"> </a> </div>
           <div class="s-info clearfix">
             <div class="s-name pull-left"> <span>南美洲蛋黄果</span> </div>
             <div class="s-unit pull-left"> <span>￥159.00/斤</span> </div>
@@ -420,7 +420,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
           </div>
         </li>
         <li class="pull-left " pid="7672" ppid="9843" type="normal" pno="2151216128">
-          <div class="s-img"> <a href="RepertoryServlet?todo=searchBygid&gid=69" target="_blank"> <img class="lazy" src="img/nacuigua1.jpg" alt="" src="img/default.png"> </a> </div>
+          <div class="s-img"> <a href="repertoryAction_searchBygid?rGid=69" target="_blank"> <img class="lazy" src="img/nacuigua1.jpg" alt="" src="img/default.png"> </a> </div>
           <div class="s-info clearfix">
             <div class="s-name pull-left"> <span>新西兰纳粹瓜</span> </div>
             <div class="s-unit pull-left"> <span>￥450.00/斤</span> </div>
