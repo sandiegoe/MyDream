@@ -51,7 +51,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                         </li>
                         -->
                         <li class="">
-                            <a href="RepertoryServlet?todo=searchGiftCondition&pageNo=1" target="_blank">
+                            <a href="repertoryAction_searchGiftCondition?pageNo=1" target="_blank">
                                 礼品
                                 <span>Gift</span>
                             </a>
