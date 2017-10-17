@@ -64,7 +64,7 @@
 			<result name="toUserLoginPage" type="redirectAction">userAction_loginPage</result>
 			<result name="jiesuanPage">/jiesuan.jsp</result>
 			<result name="successed">/success.jsp</result>
-			<allowed-methods>gouwuche,jiesuanPage,jiesuan</allowed-methods>
+			<allowed-methods>gouwuche,jiesuanPage,jiesuan,pNumAjax</allowed-methods>
 		</action>
 		
 	</package>

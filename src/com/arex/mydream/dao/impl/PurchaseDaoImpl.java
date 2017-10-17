@@ -55,7 +55,7 @@ public class PurchaseDaoImpl implements PurchaseDao {
 	@Override
 	public Purchase searchPurchase(int pUid, int pSid, int pGid) {
 		Purchase purchase = null;
-		List<Purchase> listPE = (List<Purchase>) hibernateTemplate.find("select purchase from Purchase purchase where purchase.pUid=? and pSid=? and pGid=? ", pUid, pSid, pGid);
+		List<Purchase> listPE = (List<Purchase>) hibernateTemplate.find("select purchase from Purchase purchase where purchase.pUid=? and pSid=? and pGid=? order by pId desc ", pUid, pSid, pGid);
 
 		if (listPE!=null && listPE.size()>0) {
 			purchase = listPE.get(0);

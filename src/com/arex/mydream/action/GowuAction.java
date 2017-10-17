@@ -19,8 +19,13 @@ import org.springframework.stereotype.Component;
 import com.arex.mydream.action.vo.GoodsDTO;
 import com.arex.mydream.action.vo.GowuDTO;
 import com.arex.mydream.action.vo.GowuItem;
+import com.arex.mydream.action.vo.OrdersDTO;
+import com.arex.mydream.action.vo.PurchaseDTO;
+import com.arex.mydream.model.Orders;
 import com.arex.mydream.model.User;
 import com.arex.mydream.service.GoodsBiz;
+import com.arex.mydream.service.OrdersBiz;
+import com.arex.mydream.service.PurchaseBiz;
 import com.arex.mydream.service.UserService;
 import com.opensymphony.xwork2.ModelDriven;
 
@@ -39,7 +44,35 @@ public class GowuAction implements ModelDriven<GowuDTO>, ServletRequestAware,
 	private GoodsBiz goodsBiz;
 	@Resource(name = "userService")
 	private UserService userBiz;
+	@Resource(name="purchaseBizImpl")
+	private PurchaseBiz purchaseBiz;
+	@Resource(name="ordersBizImpl")
+	private OrdersBiz ordersBiz;
 
+	
+	public String pNumAjax() {
+		String numStr = model.getpNum();
+		int gId = model.getgId();
+		if (numStr==null || "".equals(numStr)) {
+			return null;
+		}
+		int num = Integer.valueOf(numStr);
+		
+		User user = (User) request.getSession().getAttribute("user");
+		Map<Integer, List<GowuItem>> gwc = (Map<Integer, List<GowuItem>>) request
+				.getSession().getAttribute("gwc");
+		List<GowuItem> list = gwc.get(user.getuId());
+		
+		for (GowuItem gowuItem : list) {
+			if (gId == gowuItem.getgId()) {
+				gowuItem.setpNum(num);
+			}
+		}
+		
+		return null;
+		
+	}
+	
 	public String jiesuanPage() {
 		
 		// 获取当前登录的用户
@@ -49,6 +82,8 @@ public class GowuAction implements ModelDriven<GowuDTO>, ServletRequestAware,
 		}
 		User user2 = userBiz.searchUser(user.getuPhone());
 		session.setAttribute("user", user2);
+		
+//		model.getpNum();
 		
 		return "jiesuanPage";
 	}
@@ -67,42 +102,41 @@ public class GowuAction implements ModelDriven<GowuDTO>, ServletRequestAware,
 				.getSession().getAttribute("gwc");
 		List<GowuItem> list = gwc.get(user.getuId());
 		
-		OrderBiz ob = new OrdersBizImpl();
-		PurchaseBiz pb = new PurchaseBizImpl();
-		Regost regost = (Regost) request.getSession().getAttribute("regost");
+		//OrderBiz ob = new OrdersBizImpl();
+		//PurchaseBiz pb = new PurchaseBizImpl();
 
 		// 对于购物车中的每一个商品都会生成一条购买和一个订单
 		for (GowuItem gowuItem : list) {// psid,pgid,puid,pnum
 
-			PurchaseDTO pc = new PurchaseDTO();
-			pc.setpSid(2);
-			pc.setpGid(gowuItem.getgId());
-			pc.setpUid(user.getuId());
-			pc.setpNum(gowuItem.getpNum());
+			PurchaseDTO purchaseDTO = new PurchaseDTO();
+			//TODO    添加店家Sid
+			purchaseDTO.setpSid(2);
+			purchaseDTO.setpGid(gowuItem.getgId());
+			purchaseDTO.setpUid(user.getuId());
+			purchaseDTO.setpNum(gowuItem.getpNum());
 			// 添加一条购买记录
-			pb.add(pc);
+			purchaseBiz.add(purchaseDTO);
 			
 			//查询刚刚添加的购买记录
-			PurchaseDTO tempPur = pb.searchPurchase(pc.getpUid(), pc.getpSid(), pc.getpGid());
+			PurchaseDTO tempPur = purchaseBiz.searchPurchaseDTO(purchaseDTO.getpUid(), purchaseDTO.getpSid(), purchaseDTO.getpGid());
 			
-			Orders orders = new Orders();
+			OrdersDTO ordersDTO = new OrdersDTO();
 			// oPid,oStartdate,oAddress
 			// System.out.println(user1.getuAddress());
-			orders.setoAddress(user1.getuAddress());
-			orders.setoStartdate(date);
-			orders.setoPid(tempPur.getpId());
-			orders.setoStatus("未完成");
+			ordersDTO.setoAddress(user1.getuAddress());
+			ordersDTO.setoStartdate(date);
+			ordersDTO.setoPid(tempPur.getpId());
+			ordersDTO.setoStatus("未完成");
 			// 添加一个订单
-			ob.add(orders);
+			ordersBiz.add(ordersDTO);
 
 			//查询刚刚添加的订单
-			Orders o = ob.searchOrder(tempPur.getpId());
+			OrdersDTO o = ordersBiz.searchOrder(tempPur.getpId());
 			request.getSession().setAttribute("oid", o.getoId());
 		}
 
 		request.setAttribute("list", list);
 		request.getSession().removeAttribute("gwc");
-		request.getRequestDispatcher("success.jsp").forward(request, response);
 
 		return "successed";
 	}
