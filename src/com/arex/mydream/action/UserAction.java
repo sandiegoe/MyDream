@@ -1,6 +1,7 @@
 package com.arex.mydream.action;
 
 
+import java.io.IOException;
 import java.io.PrintWriter;
 
 import javax.annotation.Resource;
@@ -150,19 +151,88 @@ public class UserAction extends ActionSupport implements ModelDriven,ServletResp
 		return null;
 	}
 	
+	public String mimaxiugaiajax() throws IOException{
+		String password1 = request.getParameter("password1");
+		User user = (User) request.getSession().getAttribute("user");
+		String password = SHA1jiami.SHA1Digest(password1);
+		Boolean bool = true;
+		if (password.equals(user.getuPwd())) {
+			bool = true;
+		} else {
+			bool = false;
+		}
+		PrintWriter out = response.getWriter();
+
+		out.print(bool);
+		out.flush(); // 清空
+		out.close(); // 关闭
+		return null;
+	}
+	
 	public String loginOut(){
 		request.getSession().removeAttribute("user");
 		request.getSession().removeAttribute("gwc");
 		return "loginPage";
 	}
+	
+	public String updateUser(){
+		Integer uId =userInfo.getuId();
+		User user = (User) request.getSession().getAttribute("user");
+		// user.setuPhone(uPhone);
+		// user.setuName(uName);
+		user.setSex(userInfo.getSex());
+		user.setuMail(userInfo.getuMail());
+		user.setuBir(userInfo.getuBir());
+		user.setuAddress(userInfo.getuAddress());
+		user.setuId(uId);
+		userService.updateUser(user);
+		return this.searchjibenziliao();
+	}
 
 	public String searchjibenziliao(){
 		User user = (User) request.getSession().getAttribute("user");
+		if(user == null){
+			return "loginPage";
+		}
 		String uPhone = user.getuPhone();
 		User us = userService.searchUser(uPhone);
 		// request.setAttribute("us", us);
 		request.getSession().setAttribute("user", us);
 		return "jibenziliao";
+	}
+	
+	public String mimaxiugai(){
+		String password1 = request.getParameter("password1"); // 获取修改页面的密码
+		User user = (User) request.getSession().getAttribute("user"); // 获取session中的密码
+		String SAUpwd = SHA1jiami.SHA1Digest(password1);
+		String upwd = user.getuPwd();
+
+		if (SAUpwd.equals(upwd)) {
+			String password2 = request.getParameter("password2"); // 获取输入的新密码
+			String password3 = request.getParameter("password3");
+			if (password2.equals(password3)) { // 输入的密码相等
+				String Supwd = SHA1jiami.SHA1Digest(password3);
+				user.setuPwd(Supwd);
+				userService.updateUser(user);
+				return "user";
+			} else {
+				return "mimaxiugai";
+			}
+		} else if (!password1.equals(upwd)) {
+			return "mimaxiugai";
+		}
+		return "mimaxiugai";
+	}
+	
+	public String addAddress(){
+		String address = request.getParameter("address");
+		User user = (User) request.getSession().getAttribute("user");
+		User user1 = userService.searchUser(user.getuPhone());
+		String address1 = user1.getuAddress();
+		String allAddress = address1 + "@" + address;
+		user1.setuAddress(allAddress);
+		userService.updateUser(user1);
+		return "shouhuodizhi";
 	}
 	
 	@Override

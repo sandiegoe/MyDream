@@ -92,7 +92,13 @@ public class UserServiceImpl implements UserService{
 	}
 
 	@Override
+	public void updateUser(User user) {
+		userDAO.update(user);
+	}
+
+	@Override
 	public void updateUser(UserInfo userInfo) {
+		// TODO Auto-generated method stub
 		User user = this.cenvertVO2PO(userInfo);
 		userDAO.update(user);
 	}
