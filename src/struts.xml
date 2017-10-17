@@ -19,7 +19,8 @@
 			<result name="jibenziliao">/jibenziliao.jsp</result>
 			<result name="user" type="redirect">/user.jsp</result>
 			<result name="indexPage">/index.jsp</result>
-			<allowed-methods>zhuce,zhuceRand,loginRand,loginUser,ajax,loginPage,zhucePage,user,indexPage,userPage,loginOut,searchjibenziliao</allowed-methods>
+			<result name="shouhuodizhi">/shouhuodizhi.jsp</result>
+			<allowed-methods>mimaxiugai,mimaxiugaiajax,addAddress,updateUser,indexPage,zhuce,zhuceRand,loginRand,loginUser,ajax,loginPage,zhucePage,user,indexPage,userPage,loginOut,searchjibenziliao</allowed-methods>
 		</action>
 		
 		<action name="adminAction_*" class="adminAction" method="{1}">
@@ -65,6 +66,11 @@
 			<result name="jiesuanPage">/jiesuan.jsp</result>
 			<result name="successed">/success.jsp</result>
 			<allowed-methods>gouwuche,jiesuanPage,jiesuan,pNumAjax</allowed-methods>
+		</action>
+		
+		<action name="commentAction_*" class="commentAction" method="{1}">
+			<result name="comment">/admin/comment.jsp</result>
+			<allowed-methods>comment</allowed-methods>
 		</action>
 		
 	</package>

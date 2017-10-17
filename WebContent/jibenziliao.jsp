@@ -77,7 +77,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             <ul class="list-unstyled">
 	<li><a href="user.jsp"  >我的账户</a></li>
 	<li>
-		<a href="OrdersServlet?todo=searchOrders2" >我的订单</a><a href="wodejifen.jsp" >我的积分</a>
+		<a href="orderAction_searchOrders2" >我的订单</a><a href="wodejifen.jsp" >我的积分</a>
 		<a href="zhanghuyue.jsp" >账户余额</a>
 		<a href="wodeyonghujuan.jsp" >我的优惠券</a>
 		<a href="wodezengping.jsp" >我的赠品</a>
@@ -90,7 +90,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                      
                                     if(user.getuFlag().equals("2")){
                                     %>
-                                   <a href="StoreServlet?todo=MyStore" >管理我的店面 </a>
+                                   <a href="storeAction_MyStore" >管理我的店面 </a>
                                      <%
                                     }else{
                                    %>  
@@ -101,7 +101,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                 %>
 	</li>
 	<li>
-		<a href="UserServlet?todo=searchjibenziliao" class="cur">基本资料</a>
+		<a href="csearchjibenziliao" class="cur">基本资料</a>
 		<a href="mimaxiugai.jsp" >密码修改</a>
 		<a href="shouhuodizhi.jsp" >收货地址</a>
 		<a href="tongzhishezhi.jsp" >通知设置</a>
@@ -113,7 +113,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       
         <div class="main">
           <h6 class="basic">基本资料</h6>
-          <form action="UserServlet?todo=updateUser&&uid=${user.uId }"  method="post">
+          <form action="userAction_updateUser?uId=${user.uId }"  method="post">
             <div class="content">
               <ul>
                 <li class="pic" id="pic">
