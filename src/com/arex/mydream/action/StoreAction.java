@@ -48,6 +48,9 @@ public class StoreAction implements ModelDriven<StoreDTO>, ServletRequestAware,
 			return "toUserPage";
 		}
 		StoreDTO storeDTO = storeBiz.searchStoreBySuid(user.getuId());
+		if (storeDTO == null) {
+			return "toAdminLoginPage";
+		}
 		session.setAttribute("store", storeDTO);
 		
 		return "toAdminIndex";
