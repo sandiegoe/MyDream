@@ -66,6 +66,11 @@
 			<allowed-methods>gouwuche</allowed-methods>
 		</action>
 		
+		<action name="commentAction_*" class="commentAction" method="{1}">
+			<result name="comment">/admin/comment.jsp</result>
+			<allowed-methods>comment</allowed-methods>
+		</action>
+		
 	</package>
 
 </struts>

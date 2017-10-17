@@ -367,6 +367,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			type="hidden" id="comment_curr_page" value="0"> <input
 			type="hidden" id="comment_curr_type" value=""> <input
 			type="hidden" id="comment_curr_total" value="0">
+			<hr>
 		<div class="assess clearfix">
 			<div class="leftpart pull-left">
 				<div class="good-details js_fixed clearfix" id="js_fixed">
