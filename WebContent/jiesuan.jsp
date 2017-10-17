@@ -1,8 +1,6 @@
-<%@page import="com.dream.biz.impl.UserBizImpl"%>
-<%@page import="com.dream.biz.UserBiz"%>
-<%@page import="com.dream.biz.impl.UserBizImpl"%>
-<%@page import="com.dream.biz.UserBiz"%>
-<%@page import="com.dream.entity.User"%>
+<%@page import="com.arex.mydream.service.impl.UserServiceImpl"%>
+<%@page import="com.arex.mydream.service.UserService"%>
+<%@page import="com.arex.mydream.model.User"%>
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%
 String path = request.getContextPath();
@@ -119,7 +117,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <input type="hidden" id="order_error" value="">
 
 <!-- 下单开始 -->
-<form action="GouwuServlet?todo=jiesuan" method="post">
+<form action="gowuAction_jiesuan" method="post">
 <section class="p-component-order" id="p-order">
     <h3><i class="iconfont pull-left">&#xe603;</i>填写并核对订单信息</h3>
     <h4><a href="javascript:;" class="pull-right" id="newAddress">新增收货地址</a>收货人信息</h4>
@@ -128,9 +126,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                     </ul>
         <ul  class="list-unstyled order-item-addresslist" id="orderAddressSwitch">
             <li>
-            <%  User user1= (User)session.getAttribute("user");
-                  UserBiz ub= new UserBizImpl();
-                 User user= ub.searchUser(user1.getuPhone());
+            <%  User user= (User)session.getAttribute("user");
                 if(user.getuAddress()!=null){
                %> <span class="more">
                     <b><%=user.getuAddress() %></b>

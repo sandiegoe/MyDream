@@ -268,7 +268,7 @@
 					<li class="pull-left " pid="1979" ppid="2719" type="normal"
 						pno="201411938">
 						<div class="s-img">
-							<a href="RepertoryServlet?todo=searchBygid&gid=17"
+							<a href="repertoryAction_searchBygid?gId=17"
 								target="_blank"> <img class="lazy" height="127px"
 								src="img/1-270x270-3493-RRKRR26C.jpg" alt=""
 								src="img/default.png"> </a>
@@ -286,7 +286,7 @@
 					<li class="pull-left first" pid="3682" ppid="5567" type="normal"
 						pno="201512268">
 						<div class="s-img">
-							<a href="RepertoryServlet?todo=searchBygid&gid=13"
+							<a href="repertoryAction_searchBygid?gId=13"
 								target="_blank"> <img class="lazy" height="127px"
 								src="img/1-370x370-3682-A9D9CDY9.jpg" alt=""
 								src="img/default.png"> </a>
@@ -304,7 +304,7 @@
 					<li class="pull-left " pid="6434" ppid="8567" type="normal"
 						pno="2150514132">
 						<div class="s-img">
-							<a href="RepertoryServlet?todo=searchBygid&gid=20"
+							<a href="repertoryAction_searchBygid?gId=20"
 								target="_blank"> <img class="lazy" height="127px"
 								src="img/1-370x370-6434-THKC4UFT.jpg" alt=""
 								src="img/default.png"> </a>
@@ -322,7 +322,7 @@
 					<li class="pull-left " pid="6952" ppid="9104" type="normal"
 						pno="2151122101">
 						<div class="s-img">
-							<a href="RepertoryServlet?todo=searchBygid&gid=50"
+							<a href="repertoryAction_searchBygid?gId=50"
 								target="_blank"> <img class="lazy" height="127px"
 								src="img/yangtao1.jpg" alt="" src="img/default.png"> </a>
 						</div>

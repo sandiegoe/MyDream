@@ -7,6 +7,11 @@ public class GowuDTO {
 	
 	private String send_to;
 	private String goumaijiaru;
+	
+	private String zongjia;
+	private String num; //商品的数量
+	private double gPrice;
+	private String date;
 
 	public String getSend_to() {
 		return send_to;

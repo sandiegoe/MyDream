@@ -62,7 +62,9 @@
 			<result name="gouwuche">/gouwuche.jsp</result>
 			<result name="toUserIndex" type="redirectAction">userAction_indexPage</result>
 			<result name="toUserLoginPage" type="redirectAction">userAction_loginPage</result>
-			<allowed-methods>gouwuche</allowed-methods>
+			<result name="jiesuanPage">/jiesuan.jsp</result>
+			<result name="successed">/success.jsp</result>
+			<allowed-methods>gouwuche,jiesuanPage,jiesuan</allowed-methods>
 		</action>
 		
 	</package>
