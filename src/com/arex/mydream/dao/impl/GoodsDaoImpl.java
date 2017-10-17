@@ -128,7 +128,7 @@ public class GoodsDaoImpl implements GoodsDao {
 
 	private String orderbyCondition(LinkedHashMap<String, String> orderby) {
 		String hqlOrderby = "";
-		if (orderby != null) {
+		if (orderby != null && !orderby.isEmpty()) {
 			StringBuffer buffer = new StringBuffer();
 			buffer.append("order by ");
 			for (Entry entry : orderby.entrySet()) {

@@ -97,16 +97,7 @@ public class RepertoryAction implements ModelDriven<RepertoryDTO>, ServletReques
 	
 	public String searchGiftCondition() {
 		
-		/*RepertoryBiz rb = new RepertoryBizImpl();
 		Page page = new Page();
-		Regost regost = new Regost();
-		String gprices = request.getParameter("gprice");
-		Double gprice = null;
-		if (gprices != null && !"".equals(gprices)) {
-			gprice = Double.parseDouble(gprices);
-			regost.setgPrice(gprice);
-		}
-		RepertoryBiz biz = new RepertoryBizImpl();
 		String pageNoStr = request.getParameter("pageNo");
 		Integer pageNo = 0;
 		if (pageNoStr != null && !"".equals(pageNoStr)) {
@@ -119,7 +110,7 @@ public class RepertoryAction implements ModelDriven<RepertoryDTO>, ServletReques
 		} else {
 			page.setPageNo(1);
 		}
-		Integer count = rb.searchGiftCount(regost);// 记录总数
+		Integer count = repertoryBiz.searchGiftCount(model);// 记录总数
 		if (count % pagesize != 0) {
 			count = count / pagesize + 1;
 		} else {
@@ -130,16 +121,20 @@ public class RepertoryAction implements ModelDriven<RepertoryDTO>, ServletReques
 		}
 		page.setPageSize(pagesize);// 当前页面显示数量
 		page.setPageCount(count);
-		List<Regost> listgtype = biz.searchGift(regost, page.getPageNo(),
-				page.getPageSize());
-		for (Regost regost2 : listgtype) {
-			//System.out.println(regost2);
+		
+		
+		List<RepertoryDTO> listRO = repertoryBiz.searchGift(model, page.getPageNo(), page.getPageSize());
+		List<GoodsDTO> listGO = new ArrayList<GoodsDTO>();
+		for (RepertoryDTO repertoryDTO : listRO) {
+			GoodsDTO goodsDTO = goodsBiz.searchGoods(repertoryDTO.getrGid());
+			StoreDTO storeDTO = storeBiz.searchStore(repertoryDTO.getrSid());
+			goodsDTO.setsName(storeDTO.getsName());
+			listGO.add(goodsDTO);
 		}
-		request.setAttribute("listgtype", listgtype);
-		request.getSession().setAttribute("regost", regost);
+	
+		request.setAttribute("listgtype", listGO);
+		request.getSession().setAttribute("regost", model);
 		request.setAttribute("page", page);
-		request.getRequestDispatcher("gift.jsp").forward(request, response);
-*/
 		
 		return "gift";
 	}

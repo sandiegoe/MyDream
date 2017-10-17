@@ -25,7 +25,8 @@
 <meta name="keywords" content="奇异果,苹果,橙,火龙果,葡萄,瓜,石榴,李子" />
 <meta name="description"
 	content="天天果园官方网站提供水果生鲜、果篮券卡订制、干果零食等优质食品网购服务,2014年车厘子销量全网第一,佳沛奇异果、新奇士橙、进口牛油果等亦深受果友喜爱。" />
-<title>当然果园-水果网购首选品牌，水果，我们只挑有来头的！</title> <link rel="shortcut icon"  href="img/default_userpic.ico">
+<title>当然果园-水果网购首选品牌，水果，我们只挑有来头的！</title>
+<link rel="shortcut icon" href="img/default_userpic.ico">
 <link rel="shortcut icon" href="img/favicon.ico">
 <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 <link rel="stylesheet" type="text/css" href="css/common.css">
@@ -33,53 +34,71 @@
 <link rel="stylesheet" type="text/css" href="css/cart.css">
 
 <script type="text/javascript">
-     function jia(gId){
-     var num=parseInt(document.getElementById("num"+gId).value);
-   
-       var ss= num+1;
-       if(ss>100){
-       ss=100;
-       }
-    
- 
-      var gprice= parseInt(document.getElementById("gprice"+gId).value);
-     
-    document.getElementById("num"+gId).value=ss;
-         
-  
-       document.getElementById("zongjia").value= parseInt(document.getElementById("zongjia").value)+gprice;
-     
-       // var fff=num1*gprice;
-        //alert(fff);
-    //  var msg=document.getElementById("zongjia1");
+var ht = null;
+	function pNumAjax(num,gId) {
+		if (window.XMLHttpRequest) {//其他IE容器
+			ht = new XMLHttpRequest();
+		} else if (window.ActiveXObject) {//IE容器
+			try {
+				ht = new ActiveXObject("MsXML2.XMLHTTP");
+			} catch (e) {
+				try {
+					ht = new ActiveXObject("Microsoft.XMLHTTP");
+				} catch (e) {
+					alter("对象实例化有问题！");
+				}
+			}
+		}
+	
+		ht.onreadystatechange = call123; //回调函数
+		//以GET方式发送
+		//ht.open("GET","servlet/checkuser?userId="+userId,true); //true异步
+		//ht.send();//发送请求到服务器端
 
-      //msg.innerHTML =fff;
-    
-    
-     }
-   
-     function jian(gId){
-       var num=parseInt(document.getElementById("num"+gId).value);
-       if(num>1){
-       var ss= num-1;
-        if(ss>=1){
-         var gprice= parseInt(document.getElementById("gprice"+gId).value);
-        document.getElementById("num"+gId).value=ss;
-        document.getElementById("zongjia").value= parseInt(document.getElementById("zongjia").value)-gprice;
-        }
-       
-    
-       
-       
-       
-       
-       
-     
-   
-     }
-    }
-    
-    </script>
+		ht.open("post", "gowuAction_pNumAjax?pNum="+num+"&gId="+gId	, true);
+		ht.setRequestHeader("Content-type",
+						"application/x-www-form-urlencoded");
+		ht.send(); // ?参数 
+	}
+	
+	function call123() {
+		
+	}
+	
+	function jia(gId) {
+		var num = parseInt(document.getElementById("num" + gId).value);
+		var ss = num + 1;
+		if (ss > 100) {
+			ss = 100;
+		}
+		var gprice = parseInt(document.getElementById("gprice" + gId).value);
+		document.getElementById("num" + gId).value = ss;
+		document.getElementById("zongjia").value = parseInt(document
+				.getElementById("zongjia").value)
+				+ gprice;
+		// var fff=num1*gprice;
+		//alert(fff);
+		//  var msg=document.getElementById("zongjia1");
+		//msg.innerHTML =fff;
+		pNumAjax(ss,gId);
+	}
+
+	function jian(gId) {
+		var num = parseInt(document.getElementById("num" + gId).value);
+		if (num > 1) {
+			var ss = num - 1;
+			if (ss >= 1) {
+				var gprice = parseInt(document.getElementById("gprice" + gId).value);
+				document.getElementById("num" + gId).value = ss;
+				document.getElementById("zongjia").value = parseInt(document
+						.getElementById("zongjia").value)
+						- gprice;
+				pNumAjax(ss,gId);
+			}
+		}
+
+	}
+</script>
 
 </head>
 <body>
@@ -117,7 +136,7 @@
 	<!--中部开始-->
 
 	<div class="cart w-750">
-		<form action="jiesuan.jsp" method="post">
+		<form action="gowuAction_jiesuanPage" method="post">
 
 			<div class="cart-filter-bar pt-50">
 				<div class="mycart">
@@ -166,9 +185,9 @@
 												varStatus="i">
 
 												<c:if test="${i.index==0}">
-													<a
-														href="repertoryAction_searchBygid?rGid=${gouwuche.gId}"
-														target="_blank"> <img src="${gouwu}" alt=""> </a>
+													<a href="repertoryAction_searchBygid?rGid=${gouwuche.gId}"
+														target="_blank"> <img src="${gouwu}" alt="">
+													</a>
 												</c:if>
 
 
@@ -185,9 +204,10 @@
 											<p>${gouwuche.gPrice}</p>
 										</div>
 										<input type="hidden" id="gId" name="gId"
-											value="${gouwuche.gId}"> <input type="hidden"
-											id="pnum" value="${gouwuche.pNum}"  name="pnum">
-											<c:set var="number" value="${gouwuche.pNum}"></c:set>
+											value="${gouwuche.gId}">
+										<!--  <input type="hidden"
+											id="pnum" value="${gouwuche.pNum}"  name="pNum"> -->
+										<c:set var="number" value="${gouwuche.pNum}"></c:set>
 										<div class="num_sel_lage cart-goods pull-left clearfix">
 											<button type="button" id="button"
 												class="inC num pull-left btn-minus"
@@ -199,7 +219,7 @@
 												class="deC num pull-left btn-plus"
 												onclick=" jia(${gouwuche.gId} )">+</button>
 										</div>
-										<input type="hidden" id="gprice${gouwuche.gId}" name="gprice"
+										<input type="hidden" id="gprice${gouwuche.gId}" name="gPrice"
 											value="${gouwuche.gPrice}">
 										<div class="sum pull-left">
 											<p>${gouwuche.gPrice}</p>
@@ -213,7 +233,8 @@
 												class="m-cartlist-delete deleteCartpro">删除</p>
 										</div>
 									</div>
-									<div class="cl"></div></li>
+									<div class="cl"></div>
+								</li>
 							</c:forEach>
 						</c:forEach>
 					</ul>
@@ -243,9 +264,10 @@
 				<div class="cartfooter clearfix">
 
 					<div class="cart-pay pull-right">
-						<span> 已选择 <em>${number}</em> 商品 | 订单金额￥ </span> <span class="all-order"
-							id="zongjia1"> <input type="text" disabled="disabled"
-							height="10px" id="zongjia" name="zongjia" value="${allPrice}">
+						<span> 已选择 <em>${number}</em> 商品 | 订单金额￥
+						</span> <span class="all-order" id="zongjia1"> <input type="text"
+							disabled="disabled" height="10px" id="zongjia" name="zongjia"
+							value="${allPrice}">
 						</span> <input type="submit" id="js" class="go-pay" value="去结算">
 					</div>
 					<div class="cl"></div>
@@ -258,8 +280,7 @@
 			<div class="scrollbar clearfix">
 				<ul class="clearfix look-history-menu">
 
-					<li class="pull-left"><p class="p-noborder">你可能感兴趣的商品</p>
-					</li>
+					<li class="pull-left"><p class="p-noborder">你可能感兴趣的商品</p></li>
 				</ul>
 			</div>
 			<div class="look-history-con">
@@ -268,10 +289,11 @@
 					<li class="pull-left " pid="1979" ppid="2719" type="normal"
 						pno="201411938">
 						<div class="s-img">
-							<a href="RepertoryServlet?todo=searchBygid&gid=17"
-								target="_blank"> <img class="lazy" height="127px"
+							<a href="repertoryAction_searchBygid?gId=17" target="_blank">
+								<img class="lazy" height="127px"
 								src="img/1-270x270-3493-RRKRR26C.jpg" alt=""
-								src="img/default.png"> </a>
+								src="img/default.png">
+							</a>
 						</div>
 						<div class="s-info clearfix">
 							<div class="s-name pull-left">
@@ -286,10 +308,11 @@
 					<li class="pull-left first" pid="3682" ppid="5567" type="normal"
 						pno="201512268">
 						<div class="s-img">
-							<a href="RepertoryServlet?todo=searchBygid&gid=13"
-								target="_blank"> <img class="lazy" height="127px"
+							<a href="repertoryAction_searchBygid?gId=13" target="_blank">
+								<img class="lazy" height="127px"
 								src="img/1-370x370-3682-A9D9CDY9.jpg" alt=""
-								src="img/default.png"> </a>
+								src="img/default.png">
+							</a>
 						</div>
 						<div class="s-info clearfix">
 							<div class="s-name pull-left">
@@ -304,10 +327,11 @@
 					<li class="pull-left " pid="6434" ppid="8567" type="normal"
 						pno="2150514132">
 						<div class="s-img">
-							<a href="RepertoryServlet?todo=searchBygid&gid=20"
-								target="_blank"> <img class="lazy" height="127px"
+							<a href="repertoryAction_searchBygid?gId=20" target="_blank">
+								<img class="lazy" height="127px"
 								src="img/1-370x370-6434-THKC4UFT.jpg" alt=""
-								src="img/default.png"> </a>
+								src="img/default.png">
+							</a>
 						</div>
 						<div class="s-info clearfix">
 							<div class="s-name pull-left">
@@ -322,9 +346,10 @@
 					<li class="pull-left " pid="6952" ppid="9104" type="normal"
 						pno="2151122101">
 						<div class="s-img">
-							<a href="RepertoryServlet?todo=searchBygid&gid=50"
-								target="_blank"> <img class="lazy" height="127px"
-								src="img/yangtao1.jpg" alt="" src="img/default.png"> </a>
+							<a href="repertoryAction_searchBygid?gId=50" target="_blank">
+								<img class="lazy" height="127px" src="img/yangtao1.jpg" alt=""
+								src="img/default.png">
+							</a>
 						</div>
 						<div class="s-info clearfix">
 							<div class="s-name pull-left">

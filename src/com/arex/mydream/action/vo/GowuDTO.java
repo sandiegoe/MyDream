@@ -7,6 +7,43 @@ public class GowuDTO {
 	
 	private String send_to;
 	private String goumaijiaru;
+	
+	private String zongjia;
+	public String getZongjia() {
+		return zongjia;
+	}
+
+	public void setZongjia(String zongjia) {
+		this.zongjia = zongjia;
+	}
+
+	public double getgPrice() {
+		return gPrice;
+	}
+
+	public void setgPrice(double gPrice) {
+		this.gPrice = gPrice;
+	}
+
+	public String getDate() {
+		return date;
+	}
+
+	public void setDate(String date) {
+		this.date = date;
+	}
+
+	private String pNum; //商品的数量
+	public String getpNum() {
+		return pNum;
+	}
+
+	public void setpNum(String pNum) {
+		this.pNum = pNum;
+	}
+
+	private double gPrice;
+	private String date;
 
 	public String getSend_to() {
 		return send_to;
