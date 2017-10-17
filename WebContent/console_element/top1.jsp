@@ -235,6 +235,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                     
                                    
                                     <a href="userAction_loginPage" class="link-gray">[ 登录 ]</a> 
+                                     <a href="userAction_userPage" class="link-gray">[ 个人中心]</a> 
                                    
                     ，
                     <a href="userAction_zhucePage" class="link-gray">[ 注册有惊喜 ]</a>

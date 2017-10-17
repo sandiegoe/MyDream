@@ -12,5 +12,7 @@ public interface UserService {
 
 	public User loginUser(String uPhone, String uPwd);
 	
+	public void updateUser(User user);
+
 	public void updateUser(UserInfo userInfo);
 }

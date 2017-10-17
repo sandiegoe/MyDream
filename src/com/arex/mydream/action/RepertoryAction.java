@@ -18,6 +18,8 @@ import com.arex.mydream.action.vo.GoodsDTO;
 import com.arex.mydream.action.vo.RepertoryDTO;
 import com.arex.mydream.action.vo.StoreDTO;
 import com.arex.mydream.comm.Page;
+import com.arex.mydream.model.Comment;
+import com.arex.mydream.service.CommentBiz;
 import com.arex.mydream.service.GoodsBiz;
 import com.arex.mydream.service.RepertoryBiz;
 import com.arex.mydream.service.StoreBiz;
@@ -33,6 +35,8 @@ public class RepertoryAction implements ModelDriven<RepertoryDTO>, ServletReques
 	private HttpSession session;
 	private ServletContext application;
 	private HttpServletResponse response;
+	@Resource
+	private CommentBiz commentBiz;
 
 	@Resource(name="repertoryBizImpl")
 	private RepertoryBiz repertoryBiz;	
@@ -68,6 +72,9 @@ public class RepertoryAction implements ModelDriven<RepertoryDTO>, ServletReques
 		request.setAttribute("repertoryDTO", listRO.get(0));
 		request.setAttribute("goods", goodsDTO.getgPic());
 		
+		//
+		List<Comment> listcomname = commentBiz.searchComment();
+		request.setAttribute("listcomment", listcomname);
 		
 		return "goumai";
 	}

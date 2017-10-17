@@ -1,16 +1,12 @@
-package com.arex.mydream.util;
+﻿package com.arex.mydream.util;
 
 
 	import java.io.UnsupportedEncodingException;
 	import java.math.BigInteger;
 	import java.security.MessageDigest;
 	import java.security.NoSuchAlgorithmException;
+	
 	 
-	/**
-	 * 加密策略
-	 * @author Administrator
-	 *
-	 */
 	public class SHA1jiami {
 	    private final int[] abcde = { 0x67452301, 0xefcdab89, 0x98badcfe,
 	            0x10325476, 0xc3d2e1f0 };
