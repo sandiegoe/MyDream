@@ -67,7 +67,7 @@ public class GowuAction implements ModelDriven<GowuDTO>, ServletRequestAware,
 				.getSession().getAttribute("gwc");
 		List<GowuItem> list = gwc.get(user.getuId());
 		
-		OrderBiz ob = new OrderBizImpl();
+		OrderBiz ob = new OrdersBizImpl();
 		PurchaseBiz pb = new PurchaseBizImpl();
 		Regost regost = (Regost) request.getSession().getAttribute("regost");
 
