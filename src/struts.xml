@@ -38,6 +38,7 @@
 			<result name="searchGoods">/admin/goods.jsp</result>
 			<result name="addPage">/admin/addgoods.jsp</result>
 			<result name="toSearchGoods" type="redirectAction">goodsAction_searchGoods</result>
+			<result name="toAdminLoginPage" type="redirectAction">adminAction_loginPage</result>
 			<result name="goodsone">/admin/goodsone.jsp</result>
 			<result name="goodsxiugai">/admin/goodsxiugai.jsp</result>
 			<allowed-methods>searchGoods,addPage,add,searchnameGoods,searchupdateGoods,deleteGoods,updateGoods,searchAllGoods2</allowed-methods>
