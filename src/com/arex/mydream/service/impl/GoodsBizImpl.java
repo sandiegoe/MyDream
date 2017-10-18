@@ -1,16 +1,5 @@
 package com.arex.mydream.service.impl;
 
-import java.util.ArrayList;
-
-/**
- * 商品业务层实现类
- * @author 陈霞
- *2016-3-8下午1:22:10
- *
- */
-
-import java.util.List;
-
 import javax.annotation.Resource;
 import javax.transaction.Transactional;
 
@@ -20,6 +9,14 @@ import com.arex.mydream.action.vo.GoodsDTO;
 import com.arex.mydream.dao.GoodsDao;
 import com.arex.mydream.model.Goods;
 import com.arex.mydream.service.GoodsBiz;
+/**
+ * 商品业务层实现类
+ * @author 陈霞
+ *2016-3-8下午1:22:10
+ *
+ */
+import java.util.ArrayList;
+import java.util.List;
 
 
 @Component

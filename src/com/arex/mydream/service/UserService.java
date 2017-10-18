@@ -15,4 +15,8 @@ public interface UserService {
 	public void updateUser(User user);
 
 	public void updateUser(UserInfo userInfo);
+	
+	public User searchUser(int uId);
+
+	public User searchUserByUname(String uname);
 }

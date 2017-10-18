@@ -18,6 +18,12 @@ import com.arex.mydream.service.CommentBiz;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 
+/**
+ * 
+ * @author arex
+ * @date 2017年10月18日
+ *
+ */
 @Component
 @Scope(value="prototype")
 public class CommentAction extends ActionSupport implements ModelDriven,ServletResponseAware,ServletRequestAware{
@@ -62,7 +68,8 @@ public class CommentAction extends ActionSupport implements ModelDriven,ServletR
 		} else {
 			page.setPageNo(1);
 		}
-		Integer count = commentBiz.searchCommentCount(comm);// 记录总数
+		// 记录总数
+		Integer count = commentBiz.searchCommentCount(comm);
 		if (count % pagesize != 0) {
 			count = count / pagesize + 1;
 		} else {
@@ -71,7 +78,8 @@ public class CommentAction extends ActionSupport implements ModelDriven,ServletR
 				count = 1;
 			}
 		}
-		page.setPageSize(pagesize);// 当前页面显示数量
+		// 当前页面显示数量
+		page.setPageSize(pagesize);
 		page.setPageCount(count);
 		List<Comment> listcom = commentBiz.searchPage_Comment(comm, page.getPageNo(),
 				page.getPageSize());

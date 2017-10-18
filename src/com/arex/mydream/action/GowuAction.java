@@ -21,7 +21,6 @@ import com.arex.mydream.action.vo.GowuDTO;
 import com.arex.mydream.action.vo.GowuItem;
 import com.arex.mydream.action.vo.OrdersDTO;
 import com.arex.mydream.action.vo.PurchaseDTO;
-import com.arex.mydream.model.Orders;
 import com.arex.mydream.model.User;
 import com.arex.mydream.service.GoodsBiz;
 import com.arex.mydream.service.OrdersBiz;
@@ -110,7 +109,7 @@ public class GowuAction implements ModelDriven<GowuDTO>, ServletRequestAware,
 
 			PurchaseDTO purchaseDTO = new PurchaseDTO();
 			//TODO    添加店家Sid
-			purchaseDTO.setpSid(2);
+			purchaseDTO.setpSid(8);
 			purchaseDTO.setpGid(gowuItem.getgId());
 			purchaseDTO.setpUid(user.getuId());
 			purchaseDTO.setpNum(gowuItem.getpNum());

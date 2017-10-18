@@ -3,14 +3,14 @@
 <!DOCTYPE struts PUBLIC
     "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
     "http://struts.apache.org/dtds/struts-2.5.dtd">
-    
+
 <struts>
 
 	<constant name="struts.devMode" value="true" />
 	<constant name="struts.i18n.reload" value="true" />
 	<constant name="struts.enable.DynamicMethodInvocation" value="true" />
 	<constant name="struts.configuration.xml.reload" value="true" />
-	
+
 	<package name="front" namespace="/" extends="struts-default">
 		<action name="userAction_*" class="userAction" method="{1}">
 			<result name="loginPage">/login.jsp</result>
@@ -22,7 +22,7 @@
 			<result name="shouhuodizhi">/shouhuodizhi.jsp</result>
 			<allowed-methods>mimaxiugai,mimaxiugaiajax,addAddress,updateUser,indexPage,zhuce,zhuceRand,loginRand,loginUser,ajax,loginPage,zhucePage,user,indexPage,userPage,loginOut,searchjibenziliao</allowed-methods>
 		</action>
-		
+
 		<action name="adminAction_*" class="adminAction" method="{1}">
 			<result name="loginPage">/admin/login.jsp</result>
 			<result name="index">/admin/index.jsp</result>
@@ -33,7 +33,7 @@
 			<result name="toIndex" type="redirectAction">adminAction_index</result>
 			<allowed-methods>loginPage,login,index,header,menu,welcome,footer,loginOut</allowed-methods>
 		</action>
-		
+
 		<action name="goodsAction_*" class="goodsAction" method="{1}">
 			<result name="searchGoods">/admin/goods.jsp</result>
 			<result name="addPage">/admin/addgoods.jsp</result>
@@ -43,7 +43,7 @@
 			<result name="goodsxiugai">/admin/goodsxiugai.jsp</result>
 			<allowed-methods>searchGoods,addPage,add,searchnameGoods,searchupdateGoods,deleteGoods,updateGoods,searchAllGoods2</allowed-methods>
 		</action>
-		
+
 		<action name="storeAction_*" class="storeAction" method="{1}">
 			<result name="toAdminIndex" type="redirectAction">adminAction_index</result>
 			<result name="toAdminLoginPage" type="redirectAction">adminAction_loginPage</result>
@@ -51,15 +51,16 @@
 			<result name="toUserPage" type="redirectAction">userAction_userPage</result>
 			<allowed-methods>addStore, searchStore,updateStore,myStore</allowed-methods>
 		</action>
-		
-		<action name="repertoryAction_*" class="repertoryAction" method="{1}">
+
+		<action name="repertoryAction_*" class="repertoryAction"
+			method="{1}">
 			<result name="goumai">/goumai.jsp</result>
 			<result name="toUserIndex" type="redirectAction">userAction_indexPage</result>
 			<result name="fruit">/fruit.jsp</result>
 			<result name="gift">/gift.jsp</result>
 			<allowed-methods>searchBygid,searchfruit,searchCondition,searchGiftCondition</allowed-methods>
 		</action>
-		
+
 		<action name="gowuAction_*" class="gowuAction" method="{1}">
 			<result name="gouwuche">/gouwuche.jsp</result>
 			<result name="toUserIndex" type="redirectAction">userAction_indexPage</result>
@@ -68,12 +69,25 @@
 			<result name="successed">/success.jsp</result>
 			<allowed-methods>gouwuche,jiesuanPage,jiesuan,pNumAjax</allowed-methods>
 		</action>
-		
+
 		<action name="commentAction_*" class="commentAction" method="{1}">
 			<result name="comment">/admin/comment.jsp</result>
 			<allowed-methods>comment</allowed-methods>
 		</action>
-		
+
+		<action name="ordersAction_*" class="ordersAction" method="{1}">
+		    <result name="toUserLoginPage" type="redirectAction">userAction_loginPage</result>
+		    <result name="toUserIndex" type="redirectAction">userAction_indexPage</result>
+		    <result name="toAdminLoginPage" type="redirectAction">adminAction_loginPage</result>
+            <result name="wodedingdan">/wodedingdan.jsp</result>
+            <result name="dingdanguanli">/admin/dingdanguanli.jsp</result>
+            <result name="addOrdersPage">/admin/addOrders.jsp</result>
+            <result name="updateOrdersPage">/admin/updateorder.jsp</result>
+            <allowed-methods>searchOrdersByOid,searchOrders2,searchOrders2ByStatus,searchupdateOrders2,searchOrdersBySid,addOrdersPage,
+                addOrders,updateOrdersPage,deleteOrders,updateOrders
+            </allowed-methods>
+		 </action>
+
 	</package>
 
 </struts>

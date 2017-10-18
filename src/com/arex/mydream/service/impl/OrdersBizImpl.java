@@ -23,7 +23,20 @@ public class OrdersBizImpl implements OrdersBiz {
 
 	@Override
 	public List<OrdersDTO> searchByStatus(String oStatus, Integer uId) {
-		List<Orders> listOS = ordersDao.searchByStatus(oStatus, uId);
+		LinkedHashMap<String, String> orderby = null;
+		String hqlWhere = " where 1=1 ";
+		List<Object> params = new ArrayList<Object>();
+		
+		if (oStatus!=null && !"".equals(oStatus)) {
+			hqlWhere += " and orders.oStatus like ? ";
+			params.add(oStatus);
+		}
+		if (uId != null) {
+			hqlWhere += " and user.uId=? ";
+			params.add(uId);
+		}
+		
+		List<Orders> listOS = ordersDao.searchOrder(hqlWhere , params.toArray(), orderby);
 		List<OrdersDTO> listOO = this.convertPO2VOList(listOS);
 		return listOO;
 	}
@@ -182,6 +195,10 @@ public class OrdersBizImpl implements OrdersBiz {
 		if (ordersDTO.getoStatus()!=null && !"".equals(ordersDTO.getoStatus())) {
 			hqlWhere += " and orders.oStatus=? ";
 			params.add(ordersDTO.getoStatus());
+		}
+		if (ordersDTO.getpSid() != 0) {
+			hqlWhere += " and purchase.pSid=? ";
+			params.add(ordersDTO.getpSid());
 		}
 		
 		List<Orders> listOS = ordersDao.searchOrder(hqlWhere, params.toArray(), orderby , pageNo, pageSize);

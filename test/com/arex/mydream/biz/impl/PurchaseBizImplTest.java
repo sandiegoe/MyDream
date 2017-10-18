@@ -1,7 +1,5 @@
 package com.arex.mydream.biz.impl;
 
-import static org.junit.Assert.fail;
-
 import java.util.List;
 
 import javax.annotation.Resource;

@@ -11,5 +11,9 @@ public interface UserDao {
 	public User checkUser(String uPhone);
 
 	public void update(User user);
+
+	public User searchUser(int uId);
+
+	public User searchUserByUname(String uname);
 	
 }

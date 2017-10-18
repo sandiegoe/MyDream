@@ -1,7 +1,5 @@
 package com.arex.mydream.biz.impl;
 
-import static org.junit.Assert.fail;
-
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -12,7 +10,6 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.arex.mydream.action.vo.OrdersDTO;
-import com.arex.mydream.model.Orders;
 import com.arex.mydream.service.OrdersBiz;
 
 @RunWith(value=SpringJUnit4ClassRunner.class)

@@ -13,7 +13,6 @@ import org.springframework.orm.hibernate5.HibernateTemplate;
 import org.springframework.stereotype.Component;
 
 import com.arex.mydream.dao.StoreDao;
-import com.arex.mydream.model.Goods;
 import com.arex.mydream.model.Store;
 
 @Component

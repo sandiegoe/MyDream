@@ -7,7 +7,6 @@ import javax.annotation.Resource;
 import org.springframework.stereotype.Component;
 
 import com.arex.mydream.dao.CommentDao;
-import com.arex.mydream.dao.impl.CommentDaoImpl;
 import com.arex.mydream.model.Comment;
 import com.arex.mydream.service.CommentBiz;
 

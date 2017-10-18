@@ -17,7 +17,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<script type="text/javascript" src="admin/js/My97DatePicker/WdatePicker.js"></script></head>
 
 	<body>
-		<form id="orderAdd" class="orderAdd" action="OrdersServlet?todo=addOrders" method="post">
+		<form id="orderAdd" class="orderAdd" action="ordersAction_addOrders" method="post">
 		 
 			<div class="right_content" align="center">
 				<h2>添加订单</h2>
@@ -25,7 +25,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<tbody>
 				<tr>	
  <td width="291" style="padding-right: 10px;"><span class="search">订单日期</span></td>
-                              <td><input type="text" name="ostartdate" value=""
+                              <td><input type="text" name=oStartdate value=""
 onclick="WdatePicker()" class="textfield" /></td>
 </tr>
 
@@ -34,20 +34,20 @@ onclick="WdatePicker()" class="textfield" /></td>
 								<span class="">订单状态</span>
 							</td>
 							<td>
-								<input name="ostatus" id="ostatus" class="info-textfield" type="text" placeholder="请输入订单状态" value="未送达"/>
+								<input name="oStatus" id="ostatus" class="info-textfield" type="text" placeholder="请输入订单状态" value="未送达"/>
 							</td>
 							<!--<td><span class="">用户名不可更改。</span></td>-->
 						</tr>
 					<tr>
                               <td><span class="search">送达日期</span></td>
                               <td><input type="text" onclick="WdatePicker()" value=""
-name="oenddate" class="textfield" /></td>	
+name="oEnddate" class="textfield" /></td>	
 </tr><tr>
 							<td>
 								<span class="">用户</span>
 							</td>
 							<td>
-								<input name="uname" id="uname" class="info-textfield" type="text" placeholder="请输入买家名"/>
+								<input name="uName" id="uname" class="info-textfield" type="text" placeholder="请输入买家名"/>
 							</td>
 							<!--<td><span class="">用户名不可更改。</span></td>-->
 						</tr>
@@ -56,7 +56,7 @@ name="oenddate" class="textfield" /></td>
 								<span class="">商品</span>
 							</td>
 							<td>
-								<input name="gname" id="gname" class="info-textfield" type="text" placeholder="请输入买的果品名"/>
+								<input name="gName" id="gname" class="info-textfield" type="text" placeholder="请输入买的果品名"/>
 							</td>
 							<!--<td><span class="">用户名不可更改。</span></td>-->
 						</tr>
@@ -65,7 +65,7 @@ name="oenddate" class="textfield" /></td>
 								<span class="">数量</span>
 							</td>
 							<td>
-								<input name="pnum" id="pnum" class="info-textfield" type="text" placeholder="请输入数量"/>
+								<input name="pNum" id="pnum" class="info-textfield" type="text" placeholder="请输入数量"/>
 							</td>
 							<!--<td><span class="">用户名不可更改。</span></td>-->
 						</tr>
@@ -74,7 +74,7 @@ name="oenddate" class="textfield" /></td>
 								<span class="">价格</span>
 							</td>
 							<td>
-								<input name="gprice" id="gprice" class="info-textfield" type="text" placeholder="请输入价格"/>
+								<input name="gPrice" id="gprice" class="info-textfield" type="text" placeholder="请输入价格"/>
 							</td>
 							<!--<td><span class="">用户名不可更改。</span></td>-->
 						</tr>
@@ -83,7 +83,7 @@ name="oenddate" class="textfield" /></td>
 								<span class="">订单地址</span>
 							</td>
 							<td>
-								<input name="oaddress" id="oaddress" class="info-textfield" type="text" placeholder="请输入订单地址"/>
+								<input name="oAddress" id="oaddress" class="info-textfield" type="text" placeholder="请输入订单地址"/>
 							</td>
 							<!--<td><span class="">用户名不可更改。</span></td>-->
 						</tr>
@@ -97,8 +97,8 @@ name="oenddate" class="textfield" /></td>
 								<div class="btns-pagenav">
 									<!-- 按钮 -->
 									<div class="div-btns" style="float: left;">							
-									<input class="bt_green" type="submit" name="bt_green" id="bt_green" value="添加订单">									
-										<a href="OrdersServlet?todo=searchOrders" class="bt_green" onclick="reset()">返 回</a>
+									<input class="bt_green" type="submit"  id="bt_green" value="添加订单">									
+										<a href="ordersAction_searchOrdersBySid" class="bt_green" onclick="reset()">返 回</a>
 				 					</div>
 									<!--end 按钮 -->
 								</div>

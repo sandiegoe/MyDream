@@ -12,6 +12,12 @@ public class OrdersDTO {
 	private String oAddress;// 订单地址
 	
 	private int pSid; //购买的店面Id
+	private String gName;
+	private String gPic;
+	private double gPrice;
+	private int pNum;
+	private String uName;
+	
 
 	public int getpSid() {
 		return pSid;
@@ -93,6 +99,46 @@ public class OrdersDTO {
 
 	public void setoAddress(String oAddress) {
 		this.oAddress = oAddress;
+	}
+
+	public String getgName() {
+		return gName;
+	}
+
+	public void setgName(String gName) {
+		this.gName = gName;
+	}
+
+	public String getgPic() {
+		return gPic;
+	}
+
+	public void setgPic(String gPic) {
+		this.gPic = gPic;
+	}
+
+	public double getgPrice() {
+		return gPrice;
+	}
+
+	public void setgPrice(double gPrice) {
+		this.gPrice = gPrice;
+	}
+
+	public int getpNum() {
+		return pNum;
+	}
+
+	public void setpNum(int pNum) {
+		this.pNum = pNum;
+	}
+
+	public String getuName() {
+		return uName;
+	}
+
+	public void setuName(String uName) {
+		this.uName = uName;
 	}
 
 	@Override

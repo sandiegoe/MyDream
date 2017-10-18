@@ -57,4 +57,24 @@ public class UserDaoImpl implements UserDao {
 		hibernateTemplate.update(user);
 	}
 
+	@Override
+	public User searchUser(int uId) {
+		List<User> users = (List<User>)hibernateTemplate.find("from User u where u.uId = '" + uId + "'");
+		User user = null;
+		if(users != null && users.size() > 0){
+			user = users.get(0);
+		}
+		return user;
+	}
+
+	@Override
+	public User searchUserByUname(String uname) {
+		List<User> users = (List<User>)hibernateTemplate.find("from User u where u.uName = '" + uname + "'");
+		User user = null;
+		if(users != null && users.size() > 0){
+			user = users.get(0);
+		}
+		return user;
+	}
+
 }

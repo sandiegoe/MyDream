@@ -17,7 +17,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	    <script type="text/javascript" src="admin/js/yanzheng.js"></script>
 	    </head>
 	<body>
-		<form id="orderUpdate" class="orderUpdate" action="OrdersServlet?todo=updateOrders" method="post" >
+		<form id="orderUpdate" class="orderUpdate" action="ordersAction_updateOrders" method="post" >
+		  <input type="hidden" name="oId" value="${ougp.oId}"/>
 			<div class="right_content" align="center">
 				<h2>修改订单</h2>
 				<table id="input-table" style="width: 40%;">
@@ -28,7 +29,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							</td>
 							<td>	
 						
-								<input name="ostartdate" id="ostartdate" class="info-textfield" type="text"  value="${ougp.oStartdate}"/>
+								<input name="oStartdate" id="ostartdate" class="info-textfield" type="text"  value="${ougp.oStartdate}"/>
 							</td>
 							
 						</tr>
@@ -37,7 +38,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								<span class="">订单状态</span>
 							</td>
 							<td>
-								<input name="ostatus" id="ostatus" class="info-textfield" type="text"  value="${ougp.oStatus}"/>
+								<input name="oStatus" id="ostatus" class="info-textfield" type="text"  value="${ougp.oStatus}"/>
 							</td>
 							
 						</tr>
@@ -46,19 +47,19 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								<span class="">送达日期</span>
 							</td>
 							<td>
-								<input name="oenddate" id="oenddate" class="info-textfield" type="text" value="${ougp.oEnddate }"/>
+								<input name="oEnddate" id="oenddate" class="info-textfield" type="text" value="${ougp.oEnddate }"/>
 							</td>
 							
 						</tr>	<tr>
 							
-								<input name="uname" id="uname" class="info-textfield" type="hidden" value="${ougp.uName }" />
+								<input name="uName" id="uname" class="info-textfield" type="hidden" value="${ougp.uName }" />
 						
 							
 						</tr>
 						<tr>
 						
 							
-								<input name="gname" id="gname" class="info-textfield" type="hidden" value="${ougp.gName }"/>
+								<input name="gName" id="gname" class="info-textfield" type="hidden" value="${ougp.gName }"/>
 							
 							
 						</tr>
@@ -67,7 +68,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								<span class="">数量</span>
 							</td>
 							<td>
-								<input name="pnum" id="pnum" class="info-textfield" type="text"  value="${ougp.pNum }"  onblur="checkPnum(this.value)" />
+								<input name="pNum" id="pnum" class="info-textfield" type="text"  value="${ougp.pNum }"  onblur="checkPnum(this.value)" />
 					 <span id="Msg1" style="color:red;font-size:12px; float: left;">&nbsp;</span>
 							</td>
 							
@@ -77,7 +78,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<tr>
 							
 							
-								<input name="gprice" id="gprice" class="info-textfield" type="hidden" value="${ougp.gPrice }"/>
+								<input name="gPrice" id="gprice" class="info-textfield" type="hidden" value="${ougp.gPrice }"/>
 							
 							
 						</tr>
@@ -86,7 +87,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								<span class="">订单地址</span>
 							</td>
 							<td>
-								<input name="oaddress" id="oaddress" class="info-textfield" type="text" value="${ougp.oAddress }" />
+								<input name="oAddress" id="oaddress" class="info-textfield" type="text" value="${ougp.oAddress }" />
 							</td>
 							
 						</tr>
@@ -100,8 +101,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								<div class="btns-pagenav">
 									<!-- 按钮 -->
 									<div class="div-btns" style="float: left;">							
-									<input class="bt_green" type="submit" name="bt_green" id="bt_green" value="修改订单">									
-										<a href="OrdersServlet?todo=searchOrders" class="bt_green" onclick="reset()">返 回</a>
+									<input class="bt_green" type="submit" id="bt_green" value="修改订单">									
+										<a href="ordersAction_searchOrdersBySid" class="bt_green" onclick="reset()">返 回</a>
 				 					</div>
 									<!--end 按钮 -->
 								</div>

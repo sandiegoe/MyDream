@@ -67,7 +67,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             <ul class="list-unstyled">
 	<li><a href="user.jsp" class="cur" >我的账户</a></li>
 	<li>
-		<a href="orderAction_searchOrders2" >我的订单</a><a href="wodejifen.jsp" >我的积分</a>
+		<a href="ordersAction_searchOrders2" >我的订单</a><a href="wodejifen.jsp" >我的积分</a>
 		<a href="zhanghuyue.jsp" >账户余额</a>
 		<a href="wodeyonghujuan.jsp" >我的优惠券</a>
 		<a href="wodezengping.jsp" >我的赠品</a>

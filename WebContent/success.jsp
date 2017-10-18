@@ -86,7 +86,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <p class="ordernum">您的订单号:</p>
         <p class="figure">${oid}</p>
         <div class="cl"></div>
-        <a href="OrdersServlet?todo=searchOrders2&oid=${oid}" clsss="view" target="_blank">查看订单详情 > </a>    </div>
+        <a href="ordersAction_searchOrdersByOid?oId=${oid}" clsss="view" target="_blank">查看订单详情 > </a>    </div>
 
     <div class="pay-box">
         <p class="key">请选择支付方式</p>
