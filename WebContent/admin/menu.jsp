@@ -74,7 +74,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		        <div class="submenu">
 		            <ul>
 		                
-		                <li><a href="OrdersServlet?todo=searchOrders&pageNo=1" target="mainFrame">订单信息管理</a></li>
+		                <li><a href="ordersAction_searchOrdersBySid?pageNo=1" target="mainFrame">订单信息管理</a></li>
 		            </ul>
 		        </div> 
     </div>		

@@ -1,13 +1,9 @@
 package com.arex.mydream.dao.impl;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 import javax.annotation.Resource;
-import javax.servlet.jsp.jstl.sql.Result;
 
-import org.springframework.http.HttpRequest;
 import org.springframework.orm.hibernate5.HibernateTemplate;
 import org.springframework.stereotype.Component;
 

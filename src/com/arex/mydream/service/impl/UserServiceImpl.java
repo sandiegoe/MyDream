@@ -103,5 +103,15 @@ public class UserServiceImpl implements UserService{
 		userDAO.update(user);
 	}
 
+	@Override
+	public User searchUser(int uId) {
+		return userDAO.searchUser(uId);
+	}
+
+	@Override
+	public User searchUserByUname(String uname) {
+		return userDAO.searchUserByUname(uname);
+	}
+
 
 }

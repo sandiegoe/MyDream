@@ -18,6 +18,12 @@ import com.arex.mydream.service.StoreBiz;
 import com.arex.mydream.service.UserService;
 import com.opensymphony.xwork2.ModelDriven;
 
+/**
+ * 
+ * @author arex
+ * @date 2017年10月18日
+ *
+ */
 @Component
 @Scope(value = "prototype")
 public class AdminAction implements ModelDriven<UserDTO>, ServletRequestAware, ServletResponseAware {

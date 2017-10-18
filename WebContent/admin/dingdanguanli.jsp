@@ -60,9 +60,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                     <td>${Ougp.gPrice}</td>
                     <td>${Ougp.oAddress}</td>                  
                     
-                    <td><a href="OrdersServlet?todo=searchupdateOrders&&oid=${Ougp.oId}"><img src="admin/images/user_edit.png" alt="" title="" border="0" /></a></td>
+                    <td><a href="ordersAction_updateOrdersPage?oId=${Ougp.oId}"><img src="admin/images/user_edit.png" alt="" title="" border="0" /></a></td>
                      
-                    <td><a href="OrdersServlet?todo=deleteOrders&&oid=${Ougp.oId}" class="ask"><img src="admin/images/trash.png" alt="" title="" border="0" /></a></td>
+                    <td><a href="ordersAction_deleteOrders?oId=${Ougp.oId}" class="ask"><img src="admin/images/trash.png" alt="" title="" border="0" /></a></td>
                 </tr>
                  </c:forEach>
                 <!--end 单条记录 -->
@@ -96,12 +96,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 </div>
                 --%> 
 			<div class="page-navigator-right">
-							<a href="OrdersServlet?todo=searchOrders&pageNo=1" class="first">«</a>
-							<a href="OrdersServlet?todo=searchOrders&pageNo=${page.pageNo-1}"
+							<a href="ordersAction_searchOrdersBySid?pageNo=1" class="first">«</a>
+							<a href="ordersAction_searchOrdersBySid?pageNo=${page.pageNo-1}"
 								class="prev">‹</a> &nbsp;第 ${page.pageNo} 页&nbsp; &nbsp;共<td>${page.pageCount}</td>页&nbsp;
-							<a href="OrdersServlet?todo=searchOrders&pageNo=${page.pageNo+1}"
+							<a href="ordersAction_searchOrdersBySid?pageNo=${page.pageNo+1}"
 								class="next">›</a>
-							<a href="OrdersServlet?todo=searchOrders&pageNo=${page.pageCount}"
+							<a href="ordersAction_searchOrdersBySid?pageNo=${page.pageCount}"
 								class="last">»</a>
 						</div>
 			</div>
