@@ -87,6 +87,12 @@
                 addOrders,updateOrdersPage,deleteOrders,updateOrders
             </allowed-methods>
 		 </action>
+		 
+		 <action name="saleAction_*" class="saleAction" method="{1}">
+		     <result name="toAdminLoginPage" type="redirectAction">adminAction_loginPage</result>
+		     <result name="sale">/admin/sale.jsp</result>
+		     <allowed-methods>searchSale</allowed-methods>
+		 </action>
 
 	</package>
 

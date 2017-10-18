@@ -21,10 +21,14 @@ import com.arex.mydream.action.vo.GowuDTO;
 import com.arex.mydream.action.vo.GowuItem;
 import com.arex.mydream.action.vo.OrdersDTO;
 import com.arex.mydream.action.vo.PurchaseDTO;
+import com.arex.mydream.action.vo.SaleDTO;
+import com.arex.mydream.action.vo.StoreDTO;
 import com.arex.mydream.model.User;
 import com.arex.mydream.service.GoodsBiz;
 import com.arex.mydream.service.OrdersBiz;
 import com.arex.mydream.service.PurchaseBiz;
+import com.arex.mydream.service.SaleBiz;
+import com.arex.mydream.service.StoreBiz;
 import com.arex.mydream.service.UserService;
 import com.opensymphony.xwork2.ModelDriven;
 
@@ -47,6 +51,10 @@ public class GowuAction implements ModelDriven<GowuDTO>, ServletRequestAware,
 	private PurchaseBiz purchaseBiz;
 	@Resource(name="ordersBizImpl")
 	private OrdersBiz ordersBiz;
+	@Resource(name="saleBizImpl")
+	private SaleBiz saleBiz;
+	@Resource(name="storeBizImpl")
+	private StoreBiz storeBiz;
 
 	
 	public String pNumAjax() {
@@ -128,6 +136,14 @@ public class GowuAction implements ModelDriven<GowuDTO>, ServletRequestAware,
 			ordersDTO.setoStatus("未完成");
 			// 添加一个订单
 			ordersBiz.add(ordersDTO);
+			
+			//更新销售
+			StoreDTO storeDTO = storeBiz.searchStore(tempPur.getpSid());
+			SaleDTO saleDTO = saleBiz.searchSaleBysName(storeDTO.getsName());
+			saleDTO.setSaNum(saleDTO.getSaNum() + 1);
+			saleDTO.setSaPrice(saleDTO.getSaPrice() + gowuItem.getgPrice()*gowuItem.getpNum());
+			saleBiz.updateSale(saleDTO);
+			
 
 			//查询刚刚添加的订单
 			OrdersDTO o = ordersBiz.searchOrder(tempPur.getpId());

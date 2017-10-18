@@ -52,7 +52,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <!-- 页码 + 按钮 -->
 		<div class="btns-pagenav">
 			<!-- 按钮 -->
-          <div class="div-btns"><a href="SaleServlet?todo=searchSale" class="bt_green">返回<span class="rounded"></span></a>
+          <div class="div-btns"><a href="saleAction_searchSale" class="bt_green">返回<span class="rounded"></span></a>
             </div> 
 			<!--end 按钮 --> 
             

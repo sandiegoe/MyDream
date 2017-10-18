@@ -11,9 +11,11 @@ import org.apache.struts2.interceptor.ServletResponseAware;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
+import com.arex.mydream.action.vo.SaleDTO;
 import com.arex.mydream.action.vo.StoreDTO;
 import com.arex.mydream.action.vo.UserInfo;
 import com.arex.mydream.model.User;
+import com.arex.mydream.service.SaleBiz;
 import com.arex.mydream.service.StoreBiz;
 import com.arex.mydream.service.UserService;
 import com.opensymphony.xwork2.ModelDriven;
@@ -35,6 +37,8 @@ public class StoreAction implements ModelDriven<StoreDTO>, ServletRequestAware,
 	private StoreBiz storeBiz;
 	@Resource(name = "userService")
 	private UserService userBiz;
+	@Resource(name="saleBizImpl")
+	private SaleBiz saleBiz;
 
 	@Override
 	public StoreDTO getModel() {
@@ -83,6 +87,15 @@ public class StoreAction implements ModelDriven<StoreDTO>, ServletRequestAware,
 		// 添加店面记录
 		model.setSuid(user1.getuId());
 		storeBiz.add(model);
+		
+		//添加一条销售记录
+		SaleDTO saleDTO = new SaleDTO();
+		saleDTO.setSaNum(0);
+		saleDTO.setSaPrice(0);
+		saleDTO.setSaVisitor(0);
+		saleDTO.setSaSname(sName);
+		saleBiz.addSale(saleDTO);
+		
 		// request.setAttribute("store", store);
 		// 将店面设置到store中
 		request.getSession().setAttribute("store", model);
