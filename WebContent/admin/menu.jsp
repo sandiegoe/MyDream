@@ -51,7 +51,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     			<a class="menuitem submenuheader" href="" >会员管理</a>
 		        <div class="submenu">
 		            <ul>
-		                <li><a href="VipServlet?todo=searchVip&pageNo=1" target="mainFrame">会员信息管理</a>
+		                <li><a href="vipAction_searchVip?pageNo=1" target="mainFrame">会员信息管理</a>
 		            </ul>
 		        </div>
     			<a class="menuitem submenuheader" href="">商品销售</a>

@@ -18,7 +18,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	</head>
 
 	<body>
-		<form id="" class="" action="VipServlet?todo=updateVip&uid=${vip.uId}" method="post">
+		<form id="" class="" action="vipAction_updateVip?uId=${vip.uId}" method="post">
 		 <input type="hidden" name="uid" value="${vip.uId}">
 			<div class="right_content" align="center">
 				<h2>修改会员</h2>

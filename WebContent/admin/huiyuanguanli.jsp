@@ -82,9 +82,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<div class="right_content">
 			<h2>会员信息管理</h2>
 			<div class="top-input"><table id="top-table"><tbody></tbody></table><br><table id="top-table"><tbody>
-			           <form action="VipServlet?todo=searchVip" method="post">
+			           <form action="vipAction_searchVip" method="post">
 			            <div class="search" >
-                                    <input  type="text" class="field"  placeholder="请输入用户账号" name="uphone" />
+                                    <input  type="text" class="field"  placeholder="请输入用户账号" name="uPhone" />
                                     <input  type="submit" class="button" value="搜索会员" class="bt_green" />
                                 </div>
 						</form>
@@ -118,8 +118,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                     
                     <td>${vip.uMail }</td>                    
                     <td>${vip.uAddress }</td>
-                    <td><a href="VipServlet?todo=searchUpdateVip&uid=${vip.uId }"><img src="admin/images/user_edit.png" alt="" title="" border="0" /></a></td>
-                    <td><a href="VipServlet?todo=delVip&uid=${vip.uId }" class="ask"><img src="admin/images/trash.png" alt="" title="" border="0" /></a></td>
+                    <td><a href="vipAction_searchUpdateVip?uId=${vip.uId }"><img src="admin/images/user_edit.png" alt="" title="" border="0" /></a></td>
+                    <td><a href="vipAction_delVip?uId=${vip.uId }" class="ask"><img src="admin/images/trash.png" alt="" title="" border="0" /></a></td>
                 </tr>
 								<!-- <td style="padding-right: 20px;">
 									<a href="StorageServlet?do=del&sid=${s.storageId}" class="ask">
@@ -160,12 +160,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						</div>
 						--%>
 						<div class="page-navigator-right">
-							<a href="VipServlet?todo=searchVip&pageNo=1" class="first">«</a>
-							<a href="VipServlet?todo=searchVip&pageNo=${page.pageNo-1}"
+							<a href="vipAction_searchVip?pageNo=1" class="first">«</a>
+							<a href="vipAction_searchVip?pageNo=${page.pageNo-1}"
 								class="prev">‹</a> &nbsp;第 ${page.pageNo} 页&nbsp; &nbsp;共<td>${page.pageCount}</td>页&nbsp;
-							<a href="VipServlet?todo=searchVip&pageNo=${page.pageNo+1}"
+							<a href="vipAction_searchVip?pageNo=${page.pageNo+1}"
 								class="next">›</a>
-							<a href="VipServlet?todo=searchVip&pageNo=${page.pageCount}"
+							<a href="vipAction_searchVip?pageNo=${page.pageCount}"
 								class="last">»</a>
 						</div>
 					</div>

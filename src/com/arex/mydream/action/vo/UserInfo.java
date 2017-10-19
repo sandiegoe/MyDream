@@ -14,6 +14,15 @@ public class UserInfo {
 	private String uFlag; // 权限 普通用户 卖家 后台管理
 	private String uLevel;// 会员等级
 	private String rand;//验证码
+	
+	private int pageNo;
+	
+	public int getPageNo() {
+		return pageNo;
+	}
+	public void setPageNo(int pageNo) {
+		this.pageNo = pageNo;
+	}
 	public int getuId() {
 		return uId;
 	}

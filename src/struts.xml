@@ -104,6 +104,12 @@
              </allowed-methods>
          </action>
 
+         <action name="vipAction_*" class="vipAction" method="{1}">
+             <result name="toAdminLoginPage" type="redirectAction">adminAction_loginPage</result>
+             <result name="huiyuanguanli">/admin/huiyuanguanli.jsp</result>
+             <result name="updatehuiyuan">/admin/updatehuiyuan.jsp</result>
+             <allowed-methods>searchVip,searchUpdateVip,delVip,updateVip</allowed-methods>
+         </action>
 	</package>
 
 </struts>
