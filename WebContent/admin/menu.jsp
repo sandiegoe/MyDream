@@ -65,9 +65,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     			<a class="menuitem submenuheader" href="goodCounter.html">商品活动</a>
 		        <div class="submenu">
 		            <ul>
-		                <li><a href="ActivityServlet?todo=searchActivity&pageNo=1" target="mainFrame">双11</a></li>
-		                <li><a href="ActivityServlet?todo=searchActivity12&pageNo=1" target="mainFrame">双12</a></li>
-		                <li><a href="ActivityServlet?todo=searchAnniversary&pageNo=1" target="mainFrame">周年庆</a></li>
+		                <li><a href="activityAction_searchActivity?pageNo=1&aDate=2017.11.11" target="mainFrame">双11</a></li>
+		                <li><a href="activityAction_searchActivity?pageNo=1&aDate=2017.12.12" target="mainFrame">双12</a></li>
+		                <li><a href="activityAction_searchActivity?pageNo=1&aDate=2017.12.12" target="mainFrame">周年庆</a></li>
 		            </ul>
 		        </div>
     			<a class="menuitem submenuheader" href="">订单管理</a>

@@ -93,6 +93,16 @@
 		     <result name="sale">/admin/sale.jsp</result>
 		     <allowed-methods>searchSale</allowed-methods>
 		 </action>
+		 
+		  <action name="activityAction_*" class="activityAction" method="{1}">
+		     <result name="toAdminLoginPage" type="redirectAction">adminAction_loginPage</result>
+             <result name="1111">/admin/1111.jsp</result>
+             <result name="addActivityPage">/admin/addActivity.jsp</result>
+             <result name="updateActivity">/admin/updateActivity.jsp</result>
+             <allowed-methods>searchActivity,searchActivityWithNoPage,addActivityPage,addActivity,
+                searchOneActivity,deleteActivity,searchActivityByaId,updateActivity
+             </allowed-methods>
+         </action>
 
 	</package>
 

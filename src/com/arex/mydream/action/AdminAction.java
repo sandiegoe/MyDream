@@ -22,11 +22,12 @@ import com.opensymphony.xwork2.ModelDriven;
  * 
  * @author arex
  * @date 2017年10月18日
- *
+ * 
  */
 @Component
 @Scope(value = "prototype")
-public class AdminAction implements ModelDriven<UserDTO>, ServletRequestAware, ServletResponseAware {
+public class AdminAction implements ModelDriven<UserDTO>, ServletRequestAware,
+		ServletResponseAware {
 
 	private UserDTO model = new UserDTO();
 	@Resource(name = "userService")
@@ -38,6 +39,8 @@ public class AdminAction implements ModelDriven<UserDTO>, ServletRequestAware, S
 
 	@Resource(name = "storeBizImpl")
 	private StoreBiz storeBiz;
+	@Resource(name = "userService")
+	private UserService userBiz;
 
 	@Override
 	public UserDTO getModel() {
@@ -48,6 +51,18 @@ public class AdminAction implements ModelDriven<UserDTO>, ServletRequestAware, S
 	}
 
 	public String index() {
+
+		// 获取登录的用户
+		User user = (User) session.getAttribute("user");
+		if (user == null) {
+			return "loginPage";
+		}
+		User user1 = userBiz.searchUser(user.getuPhone());
+		StoreDTO storeDTO = (StoreDTO) session.getAttribute("store");
+		if (storeDTO == null) {
+			return "loginPage";
+		}
+
 		return "index";
 	}
 
@@ -56,12 +71,13 @@ public class AdminAction implements ModelDriven<UserDTO>, ServletRequestAware, S
 	}
 
 	public String login() {
-		if (model.getuPhone() == null || "".equals(model.getuPhone()) || model.getuPwd() == null
-				|| "".equals(model.getuPwd())) {
+		if (model.getuPhone() == null || "".equals(model.getuPhone())
+				|| model.getuPwd() == null || "".equals(model.getuPwd())) {
 			request.getSession().setAttribute("errMs", "您输入的用户名和密码有误！");
 			return "loginPage";
 		} else {
-			User user = userService.loginUser(model.getuPhone(), model.getuPwd());
+			User user = userService.loginUser(model.getuPhone(),
+					model.getuPwd());
 			if (user != null) {
 				StoreDTO storeDTO = storeBiz.searchStoreBySuid(user.getuId());
 				if (storeDTO != null) {
@@ -84,7 +100,7 @@ public class AdminAction implements ModelDriven<UserDTO>, ServletRequestAware, S
 
 		session.removeAttribute("user");
 		session.removeAttribute("store");
-		
+
 		return "loginPage";
 	}
 

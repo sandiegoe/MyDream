@@ -18,7 +18,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	</head>
 
 	<body>
-		<form id="activityAdd" class="activityAdd" action="ActivityServlet?todo=addActivity" method="post">
+		<form id="activityAdd" class="activityAdd" action="activityAction_addActivity" method="post">
 			<div class="right_content" align="center">
 				<h2>添加商品活动</h2>
 				<table id="input-table" style="width: 40%;">
@@ -29,7 +29,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								<span class="">商品名称</span>
 							</td>
 							<td>
-								<input name="agname" id="agname" class="info-textfield" type="text" placeholder="请输入活动果品名"/>
+								<input name="gName" id="agname" class="info-textfield" type="text" placeholder="请输入活动果品名"/>
 							</td>
 							<!--<td><span class="">用户名不可更改。</span></td>-->
 						</tr>
@@ -39,7 +39,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								<span class="">活动价格</span>
 							</td>
 							<td>
-								<input name="aprice" id="aprice" class="info-textfield" type="text" placeholder="请输入活动果品价格"/>
+								<input name="aPrice" id="aprice" class="info-textfield" type="text" placeholder="请输入活动果品价格"/>
 							</td>
 							<!--<td><span class="">用户名不可更改。</span></td>-->
 						</tr>
@@ -48,7 +48,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								<span class="">活动日期</span>
 							</td>
 							<td>
-								<input name="adate" id="adate" class="info-textfield" type="text" placeholder="请输入活动日期"/>
+								<input name="aDate" id="adate" class="info-textfield" type="text" placeholder="请输入活动日期"/>
 							</td>
 							<!--<td><span class="">用户名不可更改。</span></td>-->
 						</tr>
@@ -57,7 +57,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								<span class="">图片</span>
 							</td>
 							<td>
-								<input name="apic" id="apic" class="info-textfield" type="text" placeholder="请输入活动果品图地址"/>
+								<input name="aPic" id="apic" class="info-textfield" type="text" placeholder="请输入活动果品图地址"/>
 							</td>
 							<!--<td><span class="">用户名不可更改。</span></td>-->
 						</tr>
@@ -73,7 +73,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 									<!-- 按钮 -->
 									<div class="div-btns" style="float: left;">
 									<input class="bt_green" type="submit" value="添加商品活动" >
-										<a href="ActivityServlet?todo=searchActivity" class="bt_green" onclick="reset()">返 回</a>
+										<a href="activityAction_searchActivity" class="bt_green" onclick="reset()">返 回</a>
 									</div>
 									<!--end 按钮 -->
 								</div>

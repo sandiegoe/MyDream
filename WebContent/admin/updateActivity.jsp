@@ -19,18 +19,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	</head>
 
 	<body>
-		<form id="activityUpdate" class="activityUpdate" action="ActivityServlet?todo=updateActivity" method="post">
+		<form id="activityUpdate" class="activityUpdate" action="activityAction_updateActivity" method="post">
 			<div class="right_content" align="center">
 				<h2>更改商品活动</h2>
 				<table id="input-table" style="width: 40%;">
 					<tbody>
-						
+						<input name="aId" id="" class="info-textfield" type="hidden" value="${acgoods.aId}"/>
 						<tr>
 							<td>
 								<span class="">商品名称</span>
 							</td>
 							<td>
-								<input name="agname" id="" class="info-textfield" type="text" value="${acgoods.gName}"/>
+								<input name="gName" id="" class="info-textfield" type="text" value="${acgoods.gName}"/>
 							</td>
 							<!--<td><span class="">用户名不可更改。</span></td>-->
 						</tr>
@@ -45,7 +45,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								<span class="">活动价格</span>
 							</td>
 							<td>
-								<input name="aprice" id="" class="info-textfield" type="text" value="${acgoods.aprice}" />
+								<input name="aPrice" id="" class="info-textfield" type="text" value="${acgoods.aPrice}" />
 							</td>
 							
 						</tr>
@@ -54,7 +54,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								<span class="">活动日期</span>
 							</td>
 							<td>
-								<input name="adate" id="" class="info-textfield" type="text"  value="${acgoods.adate}"/>
+								<input name="aDate" id="" class="info-textfield" type="text"  value="${acgoods.aDate}"/>
 							</td>
 						
 						</tr>
@@ -63,7 +63,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								<span class="">图片</span>
 							</td>
 							<td>
-								<input name="apic" id="" class="info-textfield" type="text" value="${acgoods.apic}" />
+								<input name="aPic" id="" class="info-textfield" type="text" value="${acgoods.aPic}" />
 							</td>
 							
 						</tr>
@@ -79,7 +79,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 									<!-- 按钮 -->
 									<div class="div-btns" style="float: left;">
 									<input class="bt_green" type="submit" value="更改商品活动" >
-										<a href="ActivityServlet?todo=searchActivity" class="bt_green" onclick="reset()">返 回</a>
+										<a href="activityAction_searchActivity?aDate=2017.11.11" class="bt_green" onclick="reset()">返 回</a>
 									</div>
 									<!--end 按钮 -->
 								</div>
