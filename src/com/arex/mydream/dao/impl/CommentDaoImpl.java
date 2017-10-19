@@ -4,6 +4,8 @@ import java.util.List;
 
 import javax.annotation.Resource;
 
+import org.hibernate.Session;
+import org.hibernate.query.Query;
 import org.springframework.orm.hibernate5.HibernateTemplate;
 import org.springframework.stereotype.Component;
 
@@ -82,8 +84,10 @@ public class CommentDaoImpl implements CommentDao{
 	@Override
 	public List<Comment> searchPage_Comment(Comment comm, Integer pageNo,
 			Integer pageSize) {
-		
-		StringBuffer sql = new StringBuffer(" select * from Comment where 1=1 ");
+		Session session = hibernateTemplate.getSessionFactory().openSession();
+		session.beginTransaction();
+		Query query =null;
+		StringBuffer sql = new StringBuffer("from Comment where 1=1");
 		if (comm.getcGname() != null && !"".equals(comm.getcGname())) {
 			sql.append(" and cGname like ' "+comm.getcGname()+"'");
 		}
@@ -93,13 +97,14 @@ public class CommentDaoImpl implements CommentDao{
 		if (pageNo <= 0) {
 			pageNo = 1;
 		}
+		query = session.createQuery(sql.toString());
 		if (pageNo > 0 && pageSize >= 0) {
-			sql.append(" limit ");
-			sql.append((pageNo - 1) * pageSize);
-			sql.append(" , ");
-			sql.append(pageSize);
+			query.setFirstResult((pageNo - 1) * pageSize);
+			query.setMaxResults(pageSize);
 		}
-		List<Comment> listcom = (List<Comment>) hibernateTemplate.find(sql.toString());
+		List<Comment> listcom = query.list();
+		session.getTransaction().commit();
+		session.close();
 		return listcom;
 	}
 

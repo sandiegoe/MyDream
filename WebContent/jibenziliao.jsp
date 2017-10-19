@@ -90,7 +90,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                      
                                     if(user.getuFlag().equals("2")){
                                     %>
-                                   <a href="storeAction_MyStore" >管理我的店面 </a>
+                                   <a href="storeAction_myStore" >管理我的店面 </a>
                                      <%
                                     }else{
                                    %>  

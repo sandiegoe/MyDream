@@ -26,7 +26,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <div class="right_content">            
         <h2>评论列表</h2>
 		<div class="top-input">
-		<form action="CommentServlet?todo=searchComment" name="search" method="post">
+		<form action="commentAction_searchComment" name="search" method="post">
             	<table id="top-table">
                     <tbody>
                         <tr>
@@ -87,7 +87,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <!-- 页码 + 按钮 -->
 		<div class="btns-pagenav">
 			<!-- 按钮 -->
-            <div class="div-btns"><a href="CommentServlet?todo=searchAllComment" class="bt_green">显示全部<span class="rounded">评论</span></a>
+            <div class="div-btns"><a href="commentAction_searchAllComment" class="bt_green">显示全部<span class="rounded">评论</span></a>
             </div> 
 			<!--end 按钮 --> 
             
@@ -105,12 +105,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 --%>  
                 
 				<div class="page-navigator-right">
-							<a href="CommentServlet?todo=searchComment&pageNo=1" class="first">«</a>
-							<a href="CommentServlet?todo=searchComment&pageNo=${page.pageNo-1}"
+							<a href="commentAction_searchComment?pageNo=1" class="first">«</a>
+							<a href="commentAction_searchComment?pageNo=${page.pageNo-1}"
 								class="prev">‹</a> &nbsp;第 ${page.pageNo} 页&nbsp; &nbsp;共<td>${page.pageCount}</td>页&nbsp;
-							<a href="CommentServlet?todo=searchComment&pageNo=${page.pageNo+1}"
+							<a href="commentAction_searchComment?pageNo=${page.pageNo+1}"
 								class="next">›</a>
-							<a href="CommentServlet?todo=searchComment&pageNo=${page.pageCount}"
+							<a href="commentAction_searchComment?pageNo=${page.pageCount}"
 								class="last">»</a>
 						</div>
 			</div>

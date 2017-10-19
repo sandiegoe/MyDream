@@ -72,7 +72,7 @@
 
 		<action name="commentAction_*" class="commentAction" method="{1}">
 			<result name="comment">/admin/comment.jsp</result>
-			<allowed-methods>comment</allowed-methods>
+			<allowed-methods>comment,searchComment,searchAllComment,searchnameComment</allowed-methods>
 		</action>
 
 		<action name="ordersAction_*" class="ordersAction" method="{1}">

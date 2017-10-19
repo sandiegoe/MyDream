@@ -26,7 +26,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <div class="right_content">            
         <h2>评论列表</h2>
 		<div class="top-input">
-			<form action="CommentServlet?todo=searchnameComment" name="search" method="post">
+			<form action="commentAction_searchnameComment" name="search" method="post">
             	<table id="top-table">
                     <tbody>
                         <tr>
@@ -87,7 +87,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <!-- 页码 + 按钮 -->
 		<div class="btns-pagenav">
 			<!-- 按钮 -->
-            <div class="div-btns"><a href="CommentServlet?todo=searchComment" class="bt_green">显示全部<span class="rounded">评论</span></a>
+            <div class="div-btns"><a href="commentAction_searchComment" class="bt_green">显示全部<span class="rounded">评论</span></a>
             </div> 
 			<!--end 按钮 --> 
             
