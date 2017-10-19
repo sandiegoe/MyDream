@@ -58,7 +58,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		        <div class="submenu">
 		            <ul>
 		                <li><a href="goodsAction_searchGoods" target="mainFrame">商品管理</a></li>
-		                <li><a href="CommentServlet?todo=searchComment&pageNo=1"  target="mainFrame">评论管理</a></li>
+		                <li><a href="commentAction_searchComment?pageNo=1"  target="mainFrame">评论管理</a></li>
 		                <li><a href="SaleServlet?todo=searchSale" target="mainFrame">销售查询</a></li>         
 		            </ul>
 		        </div>

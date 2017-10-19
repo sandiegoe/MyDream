@@ -18,12 +18,6 @@ import com.arex.mydream.service.CommentBiz;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 
-/**
- * 
- * @author arex
- * @date 2017年10月18日
- *
- */
 @Component
 @Scope(value="prototype")
 public class CommentAction extends ActionSupport implements ModelDriven,ServletResponseAware,ServletRequestAware{

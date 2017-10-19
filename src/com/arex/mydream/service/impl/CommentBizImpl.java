@@ -3,6 +3,7 @@ package com.arex.mydream.service.impl;
 import java.util.List;
 
 import javax.annotation.Resource;
+import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Component;
 
@@ -88,11 +89,6 @@ public class CommentBizImpl implements CommentBiz {
 		return count;
 	}
 
-	/**
-	 * 记录总数 陈霞
-	 * 
-	 * @return 记录总数
-	 */
 	@Override
 	public Integer searchCommentCount(Comment comm) {
 		Integer count = commentDao.searchCommentCount(comm);
